@@ -4,47 +4,158 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Study app</title>
+    <title>Anton Tatochenko</title><script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous">
+</script>
+    <style>@font-face{font-family:"Rose";src:url(/fonts/18113.otf);font-weight:500}@font-face{font-family:"Rose";src:url(/fonts/18112.otf);font-weight:700}@font-face{font-family:"Rose";src:url(/fonts/18111.otf);font-weight:900}*{margin:0;padding:0}body{font-size:15px;font-weight:700;font-family:sans-serif,"Segoe UI Symbol"}body header{position:absolute;left:0;top:0;width:100%;height:60px;z-index:2;display:flex;flex-direction:row;justify-content:space-between}body header .logo{text-transform:uppercase;padding:30px 0 0 50px;font-style:normal;font-weight:400;font-size:22px;line-height:37px;letter-spacing:.08em;display:flex;align-items:flex-end;text-align:center}body header .logo a,body header .logo a:visited{color:#fff;text-decoration:none}body header .menu{text-align:center;padding:30px 60px;font-family:Rose;font-style:normal;font-weight:700;font-size:14px;line-height:0;display:flex;align-items:flex-end;text-align:center;letter-spacing:.08em}body header .menu ul{padding-top:10px;display:flex;align-items:flex-end}body header .menu .active{color:#fff}body header .menu .active::after{background:#336;width:100%;left:0}body header ul{margin:auto;text-align:center}body header ul li{text-align:center;padding:0 30px;display:inline;list-style:none}body header ul li a{position:relative;display:inline-block;font-size:18px;font-weight:300;transition:color .2s ease;padding:3px 0}body header ul li a:hover::after{width:100%;left:0}body header ul li a::after{margin-top:3px;content:'';position:absolute;top:calc(100% + 5px);width:0;right:0;height:3px;transition:width .4s cubic-bezier(0.29,0.18,0.26,0.83);background:#c96}body header ul li a,body header ul li:visited{text-align:center;color:#ebebeb;text-decoration:none}body footer .footer{position:relative;width:100%;height:180px;background:#232c2f;display:flex;flex-direction:column;text-align:center}body footer .footer label{font-family:Vollkorn SC;font-style:normal;font-weight:400;font-size:16px;line-height:20px;text-align:center;color:#fff}body footer .footer .name{margin-top:1.5%}body footer .footer .name label{font-family:'Roboto Mono',monospace;color:#fff;font-size:24px;line-height:1.3;letter-spacing:7px;font-weight:700;font-style:normal;text-transform:uppercase}body footer .footer .contact{margin:15px auto 10px;text-align:center;display:flex;flex-direction:column;line-height:40px}body footer .footer .contact .social{filter:invert(0.3);margin:auto}body footer .footer .links{margin:15px auto 0}body footer .footer .links label{padding:0 24px;cursor:pointer}.fixedBottom{position:fixed;bottom:0;left:0;width:100%}</style>
   </head>
   <body>
-    <header>
-      <ul> 
-        <li> <a href="http://localhost:8080/"> About Me</a></li>
-        <li> <a href="/contact">Contacts</a></li>
-        <li> <a href="porfolio.html">My Works</a></li>
-      </ul>
-      <ul class="language">
-        <li class="active">Eng</li>
-        <li>Rus</li>
-      </ul>
+    <header id="startWindow">
+      <div class="logo">
+        <label><a class="active" href="https://portfolio-photographer.000webhostapp.com/">Anton Tatochenko</a></label>
+      </div>
+      <div class="menu">
+        <ul> 
+          <li> <a class="active" href="https://portfolio-photographer.000webhostapp.com/"> Home</a></li>
+          <li><a href="portfolio">Portfolio</a></li>
+          <li> <a href="contact">Contact                 </a></li>
+        </ul>
+      </div>
     </header>
     <main>
-      <div class="aboutMe">
-        <div class="welcome">
-          <h2>About Me</h2>
-          <div>
-            Hello! I'm Kostya Smirnov, 4 year student of KNTU. My drem/goal in life to works as
-            a frontend developer. I like to create sites that are useful for people, combining 
-            the useful with the pleasant. At the university i study energy and non-traditional 
-            energy sources, such as solar panels and windmills, it’s already difficult to call 
-            them non-traditional, but this is the name of the specialty :)<br>
-            This direction is not very interesting to me, so after the end of the 4th year, 
-            i want to get a higher education programmer. <br>I began to study programming at the 
-            physical and technical lyceum. There was a free C # course that really interested me, 
-            i learned how to create simple desktop applications and it was very cool. 
-            In computer science classes, we also learned the basics of HTML and CSS, but it wasn’t 
-            so interesting :) <br> While studying at the university, i also tried to develop mobile 
-            applications, but most of all I liked the development of sites.
-          </div>
-        </div>
-        <div class="photo"><span> Place for my photo.</div>
+      <div class="startWindow blockBG" data-type="background">
+        <div class="welcome">Добро пожаловать на мой сайт-портфолио, меня зовут Антон Таточенко, я занимаюсь профессионально фотографией уже на протяжении 3 лет, с помощью этого сайта вы сможете ознакомиться с моими работами и связаться со мной.</div>
+        <div class="goBottom"> <img src="/img/down.png" alt="" srcset="" onclick="scrollToObject(photoShoot__types);"></div>
       </div>
-      <div class="works">My works</div>
+      <div class="photoShoot__types" id="photoShoot__types">
+        <h2>Виды фотосессий </h2>
+                <div class="photoShoot__type" id="wedding"><img class="lazy" alt="wedding" data-src="/img/types/1.jpg">
+                  <p><span>Свадебные</span></p>
+                </div>
+                <div class="photoShoot__type" id="portrait"><img class="lazy" alt="portrait" data-src="/img/types/2.jpg">
+                  <p><span>Портретные</span></p>
+                </div>
+                <div class="photoShoot__type" id="studio"><img class="lazy" alt="studio" data-src="/img/types/3.jpg">
+                  <p><span>Студийные</span></p>
+                </div>
+                <div class="photoShoot__type" id="loveStorie"><img class="lazy" alt="loveStorie" data-src="/img/types/4.jpg">
+                  <p><span>История любви</span></p>
+                </div>
+                <div class="photoShoot__type" id="walking"><img class="lazy" alt="walking" data-src="/img/types/5.jpg">
+                  <p><span>Прогулочные</span></p>
+                </div>
+                <div class="photoShoot__type" id="boudoir"><img class="lazy" alt="boudoir" data-src="/img/types/6.jpg">
+                  <p><span>Будуарные</span></p>
+                </div>
+                <div class="photoShoot__type" id="black_and_white"><img class="lazy" alt="black_and_white" data-src="/img/types/7.jpg">
+                  <p><span>Черно-Белые</span></p>
+                </div>
+                <div class="photoShoot__type" id="creative"><img class="lazy" alt="creative" data-src="/img/types/8.jpg">
+                  <p><span>Творческие</span></p>
+                </div>
+                <div class="photoShoot__type" id="reporting"><img class="lazy" alt="reporting" data-src="/img/types/9.jpg">
+                  <p><span>Репортажные</span></p>
+                </div>
+                <div class="photoShoot__type" id="landscape"><img class="lazy" alt="landscape" data-src="/img/types/10.jpg">
+                  <p><span>Пейзажные</span></p>
+                </div>
+                <div class="photoShoot__type" id="parties"><img class="lazy" alt="parties" data-src="/img/types/11.jpg">
+                  <p><span>Вечеринки</span></p>
+                </div>
+                <div class="photoShoot__type" id="experiments"><img class="lazy" alt="experiments" data-src="/img/types/12.jpg">
+                  <p><span>Эксперементы</span></p>
+                </div>
+      </div>
+      <div class="blockBG" id="slidebg1" data-type="background" style="background-image:url(/img/home/2.jpg)">
+        <div class="caption" onclick="scrollToObject(lastest_photoShoots);">Последние работы</div>
+      </div>
+      <div class="lastest_photoShoots" id="lastest_photoShoots">
+                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/1.jpg"></div>
+                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/2.jpg"></div>
+                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/3.jpg"></div>
+                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/4.jpg"></div>
+                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/5.jpg"></div>
+                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/6.jpg"></div>
+                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/7.jpg"></div>
+                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/8.jpg"></div>
+                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/9.jpg"></div>
+                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/10.jpg"></div>
+                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/11.jpg"></div>
+                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/12.jpg"></div>
+                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/13.jpg"></div>
+                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/14.jpg"></div>
+        <div style="width:100%"></div>
+        <button anim="ripple"> <a href="/portfolio">Посмотреть ещё работы</a></button>
+      </div>
+      <div class="blockBG" id="slidebg3" data-type="background" style="background-image:url(/img/home/4.jpg)">
+        <div class="caption"> <a href="/contact">Связаться со мной</a></div>
+      </div>
     </main>
     <footer>
-      <div>   
-        <h1>Home page</h1>
+      <div class="footer">
+        <div class="name">
+          <label>Anton Tatochenko</label>
+        </div>
+        <div class="contact">
+          <div class="social"><a href="https://www.facebook.com/anton.tatochenko">
+              <label class="icon facebook"> </label></a><a href="https://t.me/anton_photography">
+              <label class="icon telegram"></label></a><a href="https://instagram.com/anton_photographer_?igshid=540gzsq9m1j2">
+              <label class="icon instagram"></label></a></div>
+        </div>
+        <div class="links"><a href="https://portfolio-photographer.000webhostapp.com/"><label> Home </label></a>
+          <label onclick="scrollToObject(startWindow)">Top</label>
+        </div>
       </div>
     </footer>
-  <script type="text/javascript" src="/contact/index.js"></script></body>
+    <script type="text/javascript">
+      let heightPage = Math.max(
+          document.body.scrollHeight, document.documentElement.scrollHeight,
+          document.body.offsetHeight, document.documentElement.offsetHeight,
+          document.body.clientHeight, document.documentElement.clientHeight
+      );
+      function scrollToObject(object){
+          let scrollValue = object.offsetTop - window.pageYOffset;
+          window.scrollBy({top: scrollValue, behavior: 'smooth'});
+      }
+      document.addEventListener('DOMContentLoaded', function(){
+          let windowHeight = document.documentElement.clientHeight;
+          let bodyHeight = document.body.scrollHeight;
+          if (bodyHeight + 180 < windowHeight){
+              document.getElementsByTagName("footer")[0].classList.add("fixedBottom");
+          }else if(document.getElementsByTagName("footer")[0].classList.contains("fixedBottom"))
+          {
+              document.getElementsByTagName("footer")[0].classList.remove("fixedBottom");
+          }
+      });          
+      
+      document.addEventListener("DOMContentLoaded", function() {
+      var lazyloadImages = document.querySelectorAll("img.lazy");    
+      var lazyloadThrottleTimeout;
+      
+      function lazyload () {
+          if(lazyloadThrottleTimeout) {
+          clearTimeout(lazyloadThrottleTimeout);
+          }    
+          
+          lazyloadThrottleTimeout = setTimeout(function() {
+              var scrollTop = window.pageYOffset;
+              lazyloadImages.forEach(function(img) {
+                  if(img.offsetTop < (window.innerHeight + scrollTop)) {
+                  img.src = img.dataset.src;
+                  img.classList.remove('lazy');
+                  }
+              });
+              if(lazyloadImages.length == 0) { 
+              document.removeEventListener("scroll", lazyload);
+              window.removeEventListener("resize", lazyload);
+              window.removeEventListener("orientationChange", lazyload);
+              }
+          }, 20);
+      }
+      
+      document.addEventListener("scroll", lazyload);
+      window.addEventListener("resize", lazyload);
+      window.addEventListener("orientationChange", lazyload);
+      });
+    </script>
+  <script type="text/javascript" src="index.js"></script></body>
 </html>

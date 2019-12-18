@@ -1,0 +1,24 @@
+block main
+
+    .gallery
+            .swiper-container.main-slider.loading
+                .swiper-wrapper
+                    - for (var i = 1; i < 10; i++)
+                        .swiper-slide
+                            figure.slide-bgimg(style="background-image:url(/img/types/reporting/"+i+".jpg)")
+                                img.entity-img(src="/img/types/reporting/"+i+".jpg")
+                            .content
+                                p.title
+                                span.caption
+                .swiper-button-prev.swiper-button-white
+                .swiper-button-next.swiper-button-white
+            .swiper-container.nav-slider.loading
+                .swiper-wrapper(role="navigation")
+                    - for (var i = 1; i < 10; i++)
+                        .swiper-slide
+                            figure.slide-bgimg(style="background-image:url(/img/types/reporting/"+i+".jpg)")
+                                img.entity-img(src="/img/types/reporting/"+i+".jpg")
+                            .content
+                                p.title
+    
+    

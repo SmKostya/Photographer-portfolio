@@ -1,0 +1,13 @@
+{
+    "remotefs.remote": {
+        "первый сайт": {
+            "scheme": "ftp",
+            "host": "files.000webhost.com",
+            "port": 21,
+            "username": "portfolio-photographer",
+            "password": "secretsecret",
+            "rootPath": "/",
+            "connectTimeout": 10000
+        }
+    }
+}

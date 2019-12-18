@@ -1,11 +1,50 @@
 extends ../base.pug
-
+block head
+    //- style.
+        //- .gallery{position:relative;height:calc(100vh - 40px)}*,:before,:after{margin:0;padding:0;box-sizing:content-box;}.swiper-container{width:100%;height:calc(100vh - 40px);float:left;transition:opacity .6s ease,transform .3s ease}.swiper-container.nav-slider{width:20%;padding-left:5px}.swiper-container.nav-slider .swiper-slide .content{width:100%}.swiper-container.loading{opacity:0;visibility:hidden}.swiper-slide{overflow:hidden}.swiper-slide .slide-bgimg{position:absolute;top:0;left:0;width:100%;height:100%;background-position:center;background-size:cover}.swiper-slide .entity-img{display:none}.swiper-slide .content{position:absolute;top:40%;left:0;width:50%;padding-left:5%;color:#fff}.swiper-slide .content .title{font-size:2.6em;font-weight:700;margin-bottom:30px}.swiper-slide .content .caption{display:block;font-size:13px;line-height:1.4;transform:translateX(50px);opacity:0;transition:opacity .3s ease,transform .7s ease}.swiper-slide .content .caption.show{transform:translateX(0);opacity:1}[class^="swiper-button-"]{width:44px;opacity:0;visibility:hidden}
 block main
-    div(class="slider")
-        img(src="./src/img/1.jpg", class="slide showing", alt="")
-        img(src="./src/img/2.jpg", class="slide", alt="")
-        img(src="./src/img/3.jpg", class="slide", alt="")
-        img(src="./src/img/4.jpg", class="slide", alt="")
     
-block footer
-    //- h1 Home page
+
+    .startWindow.blockBG(data-type="background")
+        .welcome Добро пожаловать на мой сайт-портфолио, меня зовут Антон Таточенко, я занимаюсь профессионально фотографией уже на протяжении 3 лет, с помощью этого сайта вы сможете ознакомиться с моими работами и связаться со мной.
+        .goBottom 
+            img(src="/img/down.png", alt="", srcset="", onclick="scrollToObject(photoShoot__types);")
+                
+
+    .photoShoot__types(id="photoShoot__types")
+        h2 Виды фотосессий 
+        //- div(style="width:80%")
+        mixin photoShoot(name, id, src)
+            .photoShoot__type(id=id)
+                img.lazy(alt=id, data-src=src)
+                p
+                    span= name
+
+        - var name_list = ["Свадебные", "Портретные", "Студийные", "История любви", "Прогулочные", "Будуарные", "Черно-Белые", "Творческие", "Репортажные", "Пейзажные", "Вечеринки", "Эксперементы"]
+        - var id_list = ["wedding", "portrait", "studio", "loveStorie", "walking", "boudoir","black_and_white", "creative", "reporting", "landscape", "parties", "experiments"]
+        - for (var i = 1; i < 13; i++)
+            +photoShoot(name_list[i-1], id_list[i-1],"/img/types/"+i+".jpg") 
+                
+
+    .blockBG#slidebg1(data-type="background", style="background-image:url(/img/home/2.jpg)")
+        .caption(onclick="scrollToObject(lastest_photoShoots);") Последние работы
+
+    .lastest_photoShoots(id="lastest_photoShoots")
+        mixin lastest_photoShoots(src)
+                .photoShoot__type
+                    img.lazy(data-src=src)
+        - var name_list = ["Свадебные", "Портретные", "Студийные", "История любви", "Прогулочные", "Будуарные"]
+        - var id_list = ["wedding", "portrait", "studio", "loveStorie", "walking", "Boudoir"]
+        - for (var i = 1; i < 15; i++)
+            +lastest_photoShoots("/img/latest/"+i+".jpg")
+        div(style="width:100%")
+        button(anim="ripple") 
+            a(href="/portfolio") Посмотреть ещё работы
+
+
+
+
+    .blockBG#slidebg3(data-type="background", style="background-image:url(/img/home/4.jpg)")
+        .caption 
+            a(href="/contact") Связаться со мной
+    
