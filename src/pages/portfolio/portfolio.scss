@@ -22,7 +22,6 @@ header {
     display: flex;
 
 }
-
 .filter {
     position: fixed;
     left: 0;
@@ -31,12 +30,13 @@ header {
     min-width: 160px;
     height: 100%;
     border-right: 1px solid #ccc;
+    background-color: #333;
 
     ul {
-        margin-top: 80px;
+        margin-top: calc(50vh - 584px/2 + 50px);
         font-family: sans-serif;
         text-align: right;
-        color: #333333;
+        color: #ffffff;
         font-size: 16px;
         border-bottom: 2px solid #ccc;
 
@@ -46,7 +46,7 @@ header {
             justify-content: center;
             text-transform: uppercase;
             font-family: inherit;
-            color: #333333;
+            color: #ffffff;
             font-size: 14px;
             border-bottom: 2px solid #ccc;
             padding: 4px 0 4px 0 !important;
@@ -315,4 +315,8 @@ header {
     .swiper-button-next {
         transform: translateX(-50px);
     }
+}
+
+@media screen and (max-width: 600px) {
+    
 }

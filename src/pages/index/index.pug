@@ -5,7 +5,7 @@ block head
 block main
     
 
-    .startWindow.blockBG(data-type="background")
+    .startWindow(data-type="background")
         .welcome Добро пожаловать на мой сайт-портфолио, меня зовут Антон Таточенко, я занимаюсь профессионально фотографией уже на протяжении 3 лет, с помощью этого сайта вы сможете ознакомиться с моими работами и связаться со мной.
         .goBottom 
             img(src="/img/down.png", alt="", srcset="", onclick="scrollToObject(photoShoot__types);")
@@ -26,7 +26,7 @@ block main
             +photoShoot(name_list[i-1], id_list[i-1],"/img/types/"+i+".jpg") 
                 
 
-    .blockBG#slidebg1(data-type="background", style="background-image:url(/img/home/2.jpg)")
+    .blockBG.parallax-window(data-parallax="scroll" data-image-src="/img/home/2.jpg")
         .caption(onclick="scrollToObject(lastest_photoShoots);") Последние работы
 
     .lastest_photoShoots(id="lastest_photoShoots")
@@ -44,7 +44,7 @@ block main
 
 
 
-    .blockBG#slidebg3(data-type="background", style="background-image:url(/img/home/4.jpg)")
+    .blockBG.parallax-window(data-parallax="scroll" data-image-src="/img/home/4.jpg")
         .caption 
             a(href="/contact") Связаться со мной
     

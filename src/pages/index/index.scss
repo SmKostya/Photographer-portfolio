@@ -151,7 +151,7 @@ body {
     position: relative;
     width: 100%;
     min-height: 100vh !important;
-
+    max-height: calc(0.8 * 100vw/1.7);
 
     background: linear-gradient(#000000d5 0, #00000010 90px, #ffffff00 120px), url(/img/home/5.jpg) left top !important;
     background-size: cover !important;
@@ -177,13 +177,14 @@ body {
     border-radius: 2px;
     font-weight: 400;
 
-    a, a:visited {
+    a,
+    a:visited {
         position: relative;
         display: inline-block;
         padding: 0 4px;
         color: #464646;
         text-decoration: none;
-        
+
 
     }
 }
@@ -213,7 +214,7 @@ body {
 }
 
 .photoShoot__types {
-    
+
     text-align: center;
     justify-content: space-between;
     width: 76vw;
@@ -306,7 +307,9 @@ body {
                 height: calc(37.4vw / 1.76);
             }
         }
-        &:nth-child(5n+14), &:nth-child(3n+3) {
+
+        &:nth-child(5n+14),
+        &:nth-child(3n+3) {
             padding-right: 0;
         }
     }
@@ -328,8 +331,9 @@ body {
         cursor: pointer;
         user-select: none;
 
-        
-        a, a:visited{
+
+        a,
+        a:visited {
             color: white;
             text-decoration: none;
             outline: none;
@@ -343,17 +347,31 @@ body {
 
 }
 
+:root {
+    --positionX: 1.1;
+    --positionY: 1;
+    --responsiveCoefficient: 0;
+}
+
 .blockBG {
+    // min-height: calc(100vw / 1.5);
+    // height: 70vh;
+    min-height: 400px;
+    background: transparent;
+    overflow: hidden;
+    // max-height: 80vh;
     width: 100%;
-    max-height: calc(0.8 * 100vw/1.7);
-    min-height: 80vh;
-    background: top no-repeat;
-    background-size: 100% auto;
+    // min-height: calc(80vw* var(--positionY));
+    // min-height: 80vh;
+    background: no-repeat center / cover;
+    // background-size: calc(100% * var(--positionX)) calc(80vw* var(--positionY));
+    // background-size: cover;
     position: relative;
     color: #253036;
     backdrop-filter: blur(300px);
     border-radius: 2px;
     line-height: normal;
+
     .caption {
         cursor: pointer;
         background-color: #ffffff82;
@@ -369,12 +387,9 @@ body {
     }
 
     &:nth-child(20n+3) .caption {
-        color: #253036;
         left: 9%;
         background-color: #ffffffa1;
-        backdrop-filter: blur(300px);
-        border-radius: 2px;
-        line-height: normal;
+
     }
 }
 
@@ -382,6 +397,7 @@ body {
 [anim="ripple"] {
     position: relative;
     overflow: hidden;
+
     &:before {
         content: '';
         position: absolute;
@@ -393,9 +409,179 @@ body {
         left: calc(var(--x) * 1px);
         width: calc(var(--d) * 1px);
         height: calc(var(--d) * 1px);
-        opacity: calc(var(--o, 1) *  0.3);
+        opacity: calc(var(--o, 1) * 0.3);
         transition: calc(var(--t, 0) * 600ms) linear;
         transform: translate(-50%, -50%) scale(var(--s, 1));
         transform-origin: center;
     }
 }
+
+// @media screen {
+//     .startWindow {
+//         .welcome {
+//             padding: 25px;
+//             font-size: 2rem;
+//         }
+//     }
+
+//     .photoShoot__types {
+//         font-size: 1.5rem;
+
+//         .photoShoot__type p span {
+//             font-size: 1.6rem;
+//         }
+//     }
+
+//     :root {
+//         --positionX: 1;
+//         --positionY: .7;
+//         --responsiveCoefficient: -200;
+//     }
+
+//     .blockBG {
+//         min-height: calc(70vh * var(--positionY));
+
+//         .caption {
+//             padding: 25px;
+//             font-size: 3rem;
+//         }
+//     }
+
+//     button a {
+//         font-size: 1.5rem;
+//         padding: 25px;
+//     }
+
+//     @media (max-width: 2400px) {
+//         :root {
+//             --positionX: 1;
+//             --positionY: .8;
+//             --responsiveCoefficient: -270;
+//         }
+//     }
+
+//     @media (max-width: 2000px) {
+//         .startWindow .welcome {
+//             font-size: 1.5rem;
+//         }
+
+//         .photoShoot__types {
+//             font-size: 1.3rem;
+
+//             .photoShoot__type p span {
+//                 font-size: 1.6rem;
+//             }
+//         }
+
+//         :root {
+//             --positionX: 1;
+//             --positionY: 0.85;
+//             --responsiveCoefficient: -150;
+//         }
+
+//         .blockBG {
+//             min-height: calc(55vh * var(--positionY));
+
+//             .caption {
+//                 padding: 18px;
+//                 font-size: 2.2rem;
+//             }
+//         }
+
+//         button a {
+//             font-size: 1.5rem;
+//             padding: 25px;
+//         }
+//     }
+
+
+//     @media (max-width: 1870px) {
+//         :root {
+//             --positionX: 1;
+//             --positionY: 0.85;
+//             --responsiveCoefficient: 0;
+//         }
+
+//         .blockBG {
+//             min-height: calc(60vh * var(--positionY));
+//         }
+//     }
+
+//     @media (max-width: 1650px) {
+//         .startWindow {
+//             .welcome {
+//                 right: 8%;
+//                 padding: 25px;
+//                 font-size: 1.5rem;
+//             }
+//         }
+
+//         .photoShoot__types {
+//             font-size: 1.3rem;
+
+//             .photoShoot__type p span {
+//                 font-size: 1.6rem;
+//             }
+//         }
+
+//         :root {
+//             --positionX: 1.1;
+//             --positionY: 0.9;
+//             --responsiveCoefficient: -15;
+//         }
+
+//         .blockBG {
+//             min-height: calc(65vh * var(--positionY));
+
+//             .caption {
+//                 padding: 18px;
+//                 font-size: 2.2rem;
+//             }
+//         }
+
+//         button a {
+//             font-size: 1.5rem;
+//             padding: 25px;
+//         }
+//     }
+
+//     @media (max-width: 1570px) {
+//         :root {
+//             --positionX: 1;
+//             --positionY: 0.9;
+//             --responsiveCoefficient: 50;
+//         }
+//     }
+
+//     @media (max-width: 1400px) {
+//         .startWindow {
+//             background-position-x: -300px !important;
+//         }
+
+//         @media (min-width: 1250px) {
+//             :root {
+//                 --positionX: 1;
+//                 --positionY: 0.9;
+//                 --responsiveCoefficient: 150;
+//             }
+//         }
+
+//         @media (max-width: 1400px) {
+//             :root {
+//                 --positionX: 1;
+//                 --positionY: 1;
+//                 --responsiveCoefficient: 0;
+//             }
+//         }
+//         @media (max-width: 1320px) {
+//             .blockBG {
+//                 min-height: calc(100vw / 1.5);
+//             }    
+//             :root {
+//                 --positionX: 1;
+//                 --positionY: 1;
+//                 --responsiveCoefficient: 0;
+//             }
+//         }
+//     }
+// }

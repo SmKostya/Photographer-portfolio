@@ -7,24 +7,65 @@ import $ from "jquery";
 
 
 
+// var wHeight = $(window).height();
 
+// function parallax() {
+//   var pHeight = $(this).outerHeight();
+//   var pMiddle = pHeight / 2;
+//   var wMiddle = wHeight / 2;
+//   var fromTop = $(this).offset().top;
+//   var scrolled = $(window).scrollTop();
+//   var speed = $(this).attr('data-parallax-speed');
+//   var rangeA = (fromTop - wHeight);
+//   var rangeB = (fromTop + pHeight);
+//   var rangeC = (fromTop - wHeight);
+//   var rangeD = (pMiddle + fromTop) - (wMiddle + (wMiddle / 2));
 
+//   if (rangeA < 0) {
+//     rangeA = 0;
+//     rangeB = wHeight
+//   }
 
+//   var percent = (scrolled - rangeA) / (rangeB - rangeA);
+//   percent = percent * 100;
+//   percent = percent * speed;
+//   percent = percent.toFixed(2);
 
+//   var animFromBottom = (scrolled - rangeC) / (rangeD - rangeC);
+//   animFromBottom = animFromBottom.toFixed(2);
+
+//   if (animFromBottom >= 1) {
+//     animFromBottom = 1;
+//   }
+
+//   $(this).css('background-position', 'center ' + percent + '%');
+// }
+// $('.parallax').each(parallax);
+// $(window).scroll(function(e) {
+//   $('.parallax').each(parallax);
+// });
+
+// $('.parallax-window').parallax({imageSrc: '/path/to/image.jpg'});
 
 
 window.onscroll = function () {
-  let arrayAnimatedBG = document.getElementsByClassName("blockBG");
-  for (let i = 0; i < arrayAnimatedBG.length; i++){
-    // if (isVisible(arrayAnimatedBG[i])) {
-      animateBG(arrayAnimatedBG[i], getScroll());
-    // } 
-  }
+  // let arrayAnimatedBG = document.getElementsByClassName("blockBG");
+  // for (let i = 0; i < arrayAnimatedBG.length; i++){
+  //   if (isVisible(arrayAnimatedBG[i])) {
+  //     animateBG(arrayAnimatedBG[i], getScroll());
+  //   } else{
+  //     stopAnimateBG(arrayAnimatedBG[i]);
+  //   }
+  // }
 };
-
+function stopAnimateBG(element){
+  element.style.backgroundPosition = "center 0px";
+}
 function animateBG(element, scrollValue) {
-    let coefficient = scrollValue - element.offsetTop;
-    element.style.backgroundPosition = "center " + coefficient + "px";
+  let root = getComputedStyle(document.querySelector(':root'));
+  let responsiveCoefficient = root.getPropertyValue('--responsiveCoefficient');
+  let coefficient = scrollValue - element.offsetTop;
+  element.style.backgroundPosition = "center " + coefficient + "px";
 }
 
 function getScroll() {
@@ -41,8 +82,8 @@ function isVisible(target) {
       bottom: window.pageYOffset + document.documentElement.clientHeight
     };
 
-  if (targetPosition.bottom > windowPosition.top-500 &&
-    targetPosition.top < windowPosition.bottom-500){
+  if (targetPosition.bottom > windowPosition.top &&
+    targetPosition.top < windowPosition.bottom){
     return true;
   } else {
     return false;

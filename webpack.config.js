@@ -10,6 +10,7 @@ let css = require("./webpack/css");
 let ExtractCSS = require("./webpack/css.extract");
 let images = require("./webpack/images");
 let webpack = require("webpack");
+let uglifyJs = require("./webpack/js.uglify");
 
 let conf = merge([{
         entry: {
@@ -116,7 +117,8 @@ let conf = merge([{
                 jQuery: 'jquery',
                 'window.jquery': 'jquery',
                 'window.jQuery': 'jquery',
-            })
+            }),
+            
         ],
     },
     devserver(),
@@ -125,6 +127,7 @@ let conf = merge([{
     scss(),
     css(),
     images(),
+    uglifyJs(),
 ]);
 
 module.exports = (env, options) => {
