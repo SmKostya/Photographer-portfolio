@@ -10,41 +10,41 @@ block main
         .goBottom 
             img(src="/img/down.png", alt="", srcset="", onclick="scrollToObject(photoShoot__types);")
                 
+    section
+        .photoShoot__types(id="photoShoot__types")
+            h2 Виды фотосессий 
+            //- div(style="width:80%")
+            mixin photoShoot(name, id, src)
+                .photoShoot__type(id=id)
+                    img(alt=id, src=src)
+                    p
+                        span= name
 
-    .photoShoot__types(id="photoShoot__types")
-        h2 Виды фотосессий 
-        //- div(style="width:80%")
-        mixin photoShoot(name, id, src)
-            .photoShoot__type(id=id)
-                img.lazy(alt=id, data-src=src)
-                p
-                    span= name
-
-        - var name_list = ["Свадебные", "Портретные", "Студийные", "История любви", "Прогулочные", "Будуарные", "Черно-Белые", "Творческие", "Репортажные", "Пейзажные", "Вечеринки", "Эксперементы"]
-        - var id_list = ["wedding", "portrait", "studio", "loveStorie", "walking", "boudoir","black_and_white", "creative", "reporting", "landscape", "parties", "experiments"]
-        - for (var i = 1; i < 13; i++)
-            +photoShoot(name_list[i-1], id_list[i-1],"/img/types/"+i+".jpg") 
+            - var name_list = ["Свадебные", "Портретные", "Студийные", "История любви", "Прогулочные", "Будуарные", "Черно-Белые", "Творческие", "Репортажные", "Пейзажные", "Вечеринки", "Эксперементы"]
+            - var id_list = ["wedding", "portrait", "studio", "loveStorie", "walking", "boudoir","black_and_white", "creative", "reporting", "landscape", "parties", "experiments"]
+            - for (var i = 1; i < 13; i++)
+                +photoShoot(name_list[i-1], id_list[i-1],"/img/types/"+i+".jpg") 
                 
 
-    .blockBG.parallax-window(data-parallax="scroll" data-image-src="/img/home/2.jpg")
+    .parallax-container(data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="/img/home/2.jpg" data-natural-width="1500" data-natural-height="1000")
         .caption(onclick="scrollToObject(lastest_photoShoots);") Последние работы
-
-    .lastest_photoShoots(id="lastest_photoShoots")
-        mixin lastest_photoShoots(src)
-                .photoShoot__type
-                    img.lazy(data-src=src)
-        - var name_list = ["Свадебные", "Портретные", "Студийные", "История любви", "Прогулочные", "Будуарные"]
-        - var id_list = ["wedding", "portrait", "studio", "loveStorie", "walking", "Boudoir"]
-        - for (var i = 1; i < 15; i++)
-            +lastest_photoShoots("/img/latest/"+i+".jpg")
-        div(style="width:100%")
-        button(anim="ripple") 
-            a(href="/portfolio") Посмотреть ещё работы
-
-
+    section
+        .lastest_photoShoots(id="lastest_photoShoots")
+            mixin lastest_photoShoots(src)
+                    .photoShoot__type
+                        img(src=src)
+            - var name_list = ["Свадебные", "Портретные", "Студийные", "История любви", "Прогулочные", "Будуарные"]
+            - var id_list = ["wedding", "portrait", "studio", "loveStorie", "walking", "Boudoir"]
+            - for (var i = 1; i < 15; i++)
+                +lastest_photoShoots("/img/latest/"+i+".jpg")
+            div(style="width:100%")
+            button(anim="ripple") 
+                a(href="/portfolio") Посмотреть ещё работы
 
 
-    .blockBG.parallax-window(data-parallax="scroll" data-image-src="/img/home/4.jpg")
+
+    .parallax-container(data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="/img/home/4.jpg" data-natural-width="1500" data-natural-height="1000")
+        //- .parallax-window(naturalWidth="4278" naturalHeight="2852" position="0 0" bleed="0" data-z-index="-100" data-parallax="scroll" data-image-src="/img/home/4.jpg")
         .caption 
             a(href="/contact") Связаться со мной
     

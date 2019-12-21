@@ -4,7 +4,7 @@ import "normalize.css";
 import Swiper from "swiper";
 import 'swiper/css/swiper.css';
 import $ from "jquery";
-
+import "../components/parallax.min";
 
 
 // var wHeight = $(window).height();
@@ -45,7 +45,7 @@ import $ from "jquery";
 //   $('.parallax').each(parallax);
 // });
 
-// $('.parallax-window').parallax({imageSrc: '/path/to/image.jpg'});
+// $('.parallax-window').parallax({imageSrc: '/img/home/2.jpg'});
 
 
 window.onscroll = function () {

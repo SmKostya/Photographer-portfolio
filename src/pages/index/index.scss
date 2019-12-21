@@ -352,27 +352,15 @@ body {
     --positionY: 1;
     --responsiveCoefficient: 0;
 }
-
-.blockBG {
-    // min-height: calc(100vw / 1.5);
-    // height: 70vh;
+.parallax-container{
+    height: 70vh;
     min-height: 400px;
-    background: transparent;
-    overflow: hidden;
-    // max-height: 80vh;
-    width: 100%;
-    // min-height: calc(80vw* var(--positionY));
-    // min-height: 80vh;
-    background: no-repeat center / cover;
-    // background-size: calc(100% * var(--positionX)) calc(80vw* var(--positionY));
-    // background-size: cover;
     position: relative;
     color: #253036;
-    backdrop-filter: blur(300px);
-    border-radius: 2px;
-    line-height: normal;
-
+  
     .caption {
+        line-height: normal;
+        backdrop-filter: blur(300px);
         cursor: pointer;
         background-color: #ffffff82;
         color: rgb(53, 57, 61);

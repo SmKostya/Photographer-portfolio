@@ -118,7 +118,6 @@ let conf = merge([{
                 'window.jquery': 'jquery',
                 'window.jQuery': 'jquery',
             }),
-            
         ],
     },
     devserver(),
