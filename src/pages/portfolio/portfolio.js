@@ -8,55 +8,16 @@ import 'swiper/css/swiper.css';
 
 
 
-$("input").on("click", function(){
-    
-    if (this.id == "all_types"){
-        if(this.checked == true){
-            $("input").prop("checked", true);
-            $(".categori").show();
-        }else{
-            $("input").prop("checked", false);
-            $(".categori").hide();
-        }
-    }else{
-        if(this.checked == true){
-            $("." + this.id).show();
-        }else{
-            $("." + this.id).hide();
-        }
-    }
-
-    let inputs = $("input").splice(1);
-    let chek_counter = 0;
-    for (let k = 0; k<inputs.length; k++){
-        if (inputs[k].checked == true){chek_counter += 1}
-    }
-    if(chek_counter > inputs.length-1){
-        $("#all_types").prop("checked", true);
-    }else{
-        $("#all_types").prop("checked", false);
-    }
-
-
-    let windowHeight = document.documentElement.clientHeight;
-    let bodyHeight = document.body.scrollHeight;
-    if (bodyHeight + 180 < windowHeight){
-        document.getElementsByTagName("footer")[0].classList.add("fixedBottom");
-    }else if(document.getElementsByTagName("footer")[0].classList.contains("fixedBottom"))
-    {
-        document.getElementsByTagName("footer")[0].classList.remove("fixedBottom");
-    }
+$("img").on("click", function () {
+    ajaxLoad(this.alt);
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    $(".filter__show").click();
+    loadAjaxPage();
 
 
-document.addEventListener("DOMContentLoaded", function(){
-    let hash = window.location.hash.substring(1);
-    if (hash != "" && hash.length> 3){
-        ajaxLoad(hash);
-    }
 });
-
 window.addEventListener("hashchange", function(){
     let hash = window.location.hash.substring(1);
     if (hash != "" && hash != undefined){
@@ -66,26 +27,165 @@ window.addEventListener("hashchange", function(){
     }
     
 });
+function loadAjaxPage(){
+    let hash = window.location.hash.substring(1);
+    if (hash != "" && hash.length> 3){
+    ajaxLoad(hash);
+    }
+}
+
+
+
+
+let css_root = document.querySelector(':root');
+
+$(".filter__show").on("click", function(){
+    css_root.style.setProperty('--marginForFilter', '200px');
+    $(".filter").addClass("show");
+    $(".filter").removeClass("hide");
+});
+$(".filter__back").parent("li").on("click", function(){
+    css_root.style.setProperty('--marginForFilter', '30px');
+    $(".filter").addClass("hide");
+    $(".filter").removeClass("show");
+}); 
+
+$("input").parent("li").on("click", function(){
+    clearTimeout(lazyloadThrottleTimeout);
+    lazyload();
+});
+
+
+
+
+
+$("input").parent("li").on("click", function(){
+    let cheked_counter = 0;
+    let clickedChekbox = $(this).find("input");
+
+    if (clickedChekbox.attr("id") == "all_types"){
+        if(clickedChekbox.is(":checked")){
+            SetAllCheckboxFalse();
+        }else{
+            SetAllCheckboxTrue();
+        }
+
+    }else{
+        
+        if(clickedChekbox.is(":checked")){
+            cheked_counter = -1;
+            hidePhotoType(clickedChekbox.attr("id"), "hide");
+            
+        }else{
+            cheked_counter = 1;
+            hidePhotoType(clickedChekbox.attr("id"), "show");
+        }
+        
+        if(sumCheckedInputs() == $("input").length - 1){
+            $("#all_types").prop("checked", true);
+        }else{
+            $("#all_types").prop("checked", false);
+        }
+        clickedChekbox.prop( "checked", !clickedChekbox.is(":checked"));
+        footerResponsivePosition(sumCheckedInputs());
+        
+    }
+
+
+    function SetAllCheckboxTrue(){
+        $("#all_types").prop("checked", true);
+        $("input").prop("checked", true);
+        $(".categori").show(1000,"swing", 1000);
+        document.getElementsByTagName("footer")[0].classList ="";
+    }
+
+    function SetAllCheckboxFalse(){
+        $("#all_types").prop("checked", false);
+        $("input").prop("checked", false);
+        $(".categori").hide(1000,"swing", 1000);
+        document.getElementsByTagName("footer")[0].classList.add("fixedBottom");
+    }
+
+    function hidePhotoType(element_class, action="hide", element_id=false){
+        console.log(element_class);
+        if (!element_id){
+            var object = $("." + element_class);
+        }else{
+            object = $("#" + element_id);
+        }
+        if (action == "hide"){
+            object.hide(600,"swing", 1000);
+        }else if(action == "show"){
+            object.show(600,"swing", 1000);
+        }
+    }
+
+    function sumCheckedInputs(){
+        for (let k = 1; k<$("input").length; k++){
+            if ($("input").eq(k).is(":checked")){cheked_counter += 1;}
+        }
+        return cheked_counter;
+    }
+
+    function footerResponsivePosition(cheked_counter){
+        if(cheked_counter == 0){
+            document.getElementsByTagName("footer")[0].classList.add("fixedBottom");
+        }else{
+            document.getElementsByTagName("footer")[0].classList ="";
+        }
+        let windowHeight = document.documentElement.clientHeight;
+        let bodyHeight = document.body.scrollHeight;
+        if (bodyHeight + 180 < windowHeight){
+            document.getElementsByTagName("footer")[0].classList.add("fixedBottom");
+        }else{
+            document.getElementsByTagName("footer")[0].classList ="";
+        }
+    }
+
+});
+
+
+
+function lazyload() {
+    let lazyloadImages = document.querySelectorAll("img.lazy");
+    let lazyloadThrottleTimeout;
+    if (lazyloadThrottleTimeout) {
+        clearTimeout(lazyloadThrottleTimeout);
+    }
+
+    lazyloadThrottleTimeout = setTimeout(function () {
+        let scrollTop = window.pageYOffset;
+        lazyloadImages.forEach(function (img) {
+            if (img.offsetTop - 1000 < (window.innerHeight + scrollTop)+500) {
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+            }
+        });
+        if (lazyloadImages.length == 0) {
+            document.removeEventListener("scroll", lazyload);
+            window.removeEventListener("resize", lazyload);
+            window.removeEventListener("orientationChange", lazyload);
+        }
+    }, 20);
+}
+
+
 
 function ajaxLoad(page){
     $("main").load(page + ".html");
     $(document).ajaxComplete(loadSlider);
+    location.hash = '#'+page;
+    css_root.style.setProperty('--viewSlider', true);
+    document.getElementsByTagName("footer")[0].classList.add("fixedBottom");
 }
 
 
-$("img").on("click", function (e) {
-  $("main").load(this.alt + ".html");
-  $(document).ajaxComplete(loadSlider);
-  location.hash = '#'+this.alt;
-});
 
 
 function loadSlider() {
   let mainSliderSelector = '.main-slider',
         navSliderSelector = '.nav-slider',
         interleaveOffset = 0.5;
-
-        // Main Slider
         let mainSliderOptions = {
             loop: true,
             speed: 1000,
@@ -143,8 +243,6 @@ function loadSlider() {
             }
         };
         let mainSlider = new Swiper(mainSliderSelector, mainSliderOptions);
-
-        // Navigation Slider
         let navSliderOptions = {
             loop: true,
             loopAdditionalSlides: 10,
@@ -165,8 +263,6 @@ function loadSlider() {
             }
         };
         let navSlider = new Swiper(navSliderSelector, navSliderOptions);
-
-        // Matching sliders
         mainSlider.controller.control = navSlider;
         navSlider.controller.control = mainSlider;
 }

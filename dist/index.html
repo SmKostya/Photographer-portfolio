@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Anton Tatochenko</title><script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous">
 </script>
-    <style>@font-face{font-family:"Rose";src:url(/fonts/18113.otf);font-weight:500}@font-face{font-family:"Rose";src:url(/fonts/18112.otf);font-weight:700}@font-face{font-family:"Rose";src:url(/fonts/18111.otf);font-weight:900}*{margin:0;padding:0}body{font-size:15px;font-weight:700;font-family:sans-serif,"Segoe UI Symbol"}body header{position:absolute;left:0;top:0;width:100%;height:60px;z-index:2;display:flex;flex-direction:row;justify-content:space-between}body header .logo{text-transform:uppercase;padding:30px 0 0 50px;font-style:normal;font-weight:400;font-size:22px;line-height:37px;letter-spacing:.08em;display:flex;align-items:flex-end;text-align:center}body header .logo a,body header .logo a:visited{color:#fff;text-decoration:none}body header .menu{text-align:center;padding:30px 60px;font-family:Rose;font-style:normal;font-weight:700;font-size:14px;line-height:0;display:flex;align-items:flex-end;text-align:center;letter-spacing:.08em}body header .menu ul{padding-top:10px;display:flex;align-items:flex-end}body header .menu .active{color:#fff}body header .menu .active::after{background:#336;width:100%;left:0}body header ul{margin:auto;text-align:center}body header ul li{text-align:center;padding:0 30px;display:inline;list-style:none}body header ul li a{position:relative;display:inline-block;font-size:18px;font-weight:300;transition:color .2s ease;padding:3px 0}body header ul li a:hover::after{width:100%;left:0}body header ul li a::after{margin-top:3px;content:'';position:absolute;top:calc(100% + 5px);width:0;right:0;height:3px;transition:width .4s cubic-bezier(0.29,0.18,0.26,0.83);background:#c96}body header ul li a,body header ul li:visited{text-align:center;color:#ebebeb;text-decoration:none}body footer .footer{position:relative;width:100%;height:180px;background:#232c2f;display:flex;flex-direction:column;text-align:center}body footer .footer label{font-family:Vollkorn SC;font-style:normal;font-weight:400;font-size:16px;line-height:20px;text-align:center;color:#fff}body footer .footer .name{margin-top:1.5%}body footer .footer .name label{font-family:'Roboto Mono',monospace;color:#fff;font-size:24px;line-height:1.3;letter-spacing:7px;font-weight:700;font-style:normal;text-transform:uppercase}body footer .footer .contact{margin:15px auto 10px;text-align:center;display:flex;flex-direction:column;line-height:40px}body footer .footer .contact .social{filter:invert(0.3);margin:auto}body footer .footer .links{margin:15px auto 0}body footer .footer .links label{padding:0 24px;cursor:pointer}.fixedBottom{position:fixed;bottom:0;left:0;width:100%}</style>
   </head>
   <body>
     <header id="startWindow">
@@ -26,67 +25,71 @@
         <div class="welcome">Добро пожаловать на мой сайт-портфолио, меня зовут Антон Таточенко, я занимаюсь профессионально фотографией уже на протяжении 3 лет, с помощью этого сайта вы сможете ознакомиться с моими работами и связаться со мной.</div>
         <div class="goBottom"> <img src="/img/down.png" alt="" srcset="" onclick="scrollToObject(photoShoot__types);"></div>
       </div>
-      <div class="photoShoot__types" id="photoShoot__types">
-        <h2>Виды фотосессий </h2>
-                <div class="photoShoot__type" id="wedding"><img class="lazy" alt="wedding" data-src="/img/types/1.jpg">
-                  <p><span>Свадебные</span></p>
-                </div>
-                <div class="photoShoot__type" id="portrait"><img class="lazy" alt="portrait" data-src="/img/types/2.jpg">
-                  <p><span>Портретные</span></p>
-                </div>
-                <div class="photoShoot__type" id="studio"><img class="lazy" alt="studio" data-src="/img/types/3.jpg">
-                  <p><span>Студийные</span></p>
-                </div>
-                <div class="photoShoot__type" id="loveStorie"><img class="lazy" alt="loveStorie" data-src="/img/types/4.jpg">
-                  <p><span>История любви</span></p>
-                </div>
-                <div class="photoShoot__type" id="walking"><img class="lazy" alt="walking" data-src="/img/types/5.jpg">
-                  <p><span>Прогулочные</span></p>
-                </div>
-                <div class="photoShoot__type" id="boudoir"><img class="lazy" alt="boudoir" data-src="/img/types/6.jpg">
-                  <p><span>Будуарные</span></p>
-                </div>
-                <div class="photoShoot__type" id="black_and_white"><img class="lazy" alt="black_and_white" data-src="/img/types/7.jpg">
-                  <p><span>Черно-Белые</span></p>
-                </div>
-                <div class="photoShoot__type" id="creative"><img class="lazy" alt="creative" data-src="/img/types/8.jpg">
-                  <p><span>Творческие</span></p>
-                </div>
-                <div class="photoShoot__type" id="reporting"><img class="lazy" alt="reporting" data-src="/img/types/9.jpg">
-                  <p><span>Репортажные</span></p>
-                </div>
-                <div class="photoShoot__type" id="landscape"><img class="lazy" alt="landscape" data-src="/img/types/10.jpg">
-                  <p><span>Пейзажные</span></p>
-                </div>
-                <div class="photoShoot__type" id="parties"><img class="lazy" alt="parties" data-src="/img/types/11.jpg">
-                  <p><span>Вечеринки</span></p>
-                </div>
-                <div class="photoShoot__type" id="experiments"><img class="lazy" alt="experiments" data-src="/img/types/12.jpg">
-                  <p><span>Эксперементы</span></p>
-                </div>
-      </div>
-      <div class="blockBG parallax-window" data-parallax="scroll" data-image-src="/img/home/2.jpg">
+      <section>
+        <div class="photoShoot__types" id="photoShoot__types">
+          <h2>Виды фотосессий </h2>
+                    <div class="photoShoot__type" id="wedding"><img alt="wedding" src="/img/types/1.jpg">
+                      <p><span>Свадебные</span></p>
+                    </div>
+                    <div class="photoShoot__type" id="portrait"><img alt="portrait" src="/img/types/2.jpg">
+                      <p><span>Портретные</span></p>
+                    </div>
+                    <div class="photoShoot__type" id="studio"><img alt="studio" src="/img/types/3.jpg">
+                      <p><span>Студийные</span></p>
+                    </div>
+                    <div class="photoShoot__type" id="loveStorie"><img alt="loveStorie" src="/img/types/4.jpg">
+                      <p><span>История любви</span></p>
+                    </div>
+                    <div class="photoShoot__type" id="walking"><img alt="walking" src="/img/types/5.jpg">
+                      <p><span>Прогулочные</span></p>
+                    </div>
+                    <div class="photoShoot__type" id="boudoir"><img alt="boudoir" src="/img/types/6.jpg">
+                      <p><span>Будуарные</span></p>
+                    </div>
+                    <div class="photoShoot__type" id="black_and_white"><img alt="black_and_white" src="/img/types/7.jpg">
+                      <p><span>Черно-Белые</span></p>
+                    </div>
+                    <div class="photoShoot__type" id="creative"><img alt="creative" src="/img/types/8.jpg">
+                      <p><span>Творческие</span></p>
+                    </div>
+                    <div class="photoShoot__type" id="reporting"><img alt="reporting" src="/img/types/9.jpg">
+                      <p><span>Репортажные</span></p>
+                    </div>
+                    <div class="photoShoot__type" id="landscape"><img alt="landscape" src="/img/types/10.jpg">
+                      <p><span>Пейзажные</span></p>
+                    </div>
+                    <div class="photoShoot__type" id="parties"><img alt="parties" src="/img/types/11.jpg">
+                      <p><span>Вечеринки</span></p>
+                    </div>
+                    <div class="photoShoot__type" id="experiments"><img alt="experiments" src="/img/types/12.jpg">
+                      <p><span>Эксперементы</span></p>
+                    </div>
+        </div>
+      </section>
+      <div class="parallax-container" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="/img/home/2.jpg" data-natural-width="1500" data-natural-height="1000">
         <div class="caption" onclick="scrollToObject(lastest_photoShoots);">Последние работы</div>
       </div>
-      <div class="lastest_photoShoots" id="lastest_photoShoots">
-                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/1.jpg"></div>
-                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/2.jpg"></div>
-                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/3.jpg"></div>
-                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/4.jpg"></div>
-                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/5.jpg"></div>
-                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/6.jpg"></div>
-                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/7.jpg"></div>
-                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/8.jpg"></div>
-                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/9.jpg"></div>
-                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/10.jpg"></div>
-                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/11.jpg"></div>
-                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/12.jpg"></div>
-                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/13.jpg"></div>
-                <div class="photoShoot__type"><img class="lazy" data-src="/img/latest/14.jpg"></div>
-        <div style="width:100%"></div>
-        <button anim="ripple"> <a href="/portfolio">Посмотреть ещё работы</a></button>
-      </div>
-      <div class="blockBG parallax-window" data-parallax="scroll" data-image-src="/img/home/4.jpg">
+      <section>
+        <div class="lastest_photoShoots" id="lastest_photoShoots">
+                    <div class="photoShoot__type"><img src="/img/latest/1.jpg"></div>
+                    <div class="photoShoot__type"><img src="/img/latest/2.jpg"></div>
+                    <div class="photoShoot__type"><img src="/img/latest/3.jpg"></div>
+                    <div class="photoShoot__type"><img src="/img/latest/4.jpg"></div>
+                    <div class="photoShoot__type"><img src="/img/latest/5.jpg"></div>
+                    <div class="photoShoot__type"><img src="/img/latest/6.jpg"></div>
+                    <div class="photoShoot__type"><img src="/img/latest/7.jpg"></div>
+                    <div class="photoShoot__type"><img src="/img/latest/8.jpg"></div>
+                    <div class="photoShoot__type"><img src="/img/latest/9.jpg"></div>
+                    <div class="photoShoot__type"><img src="/img/latest/10.jpg"></div>
+                    <div class="photoShoot__type"><img src="/img/latest/11.jpg"></div>
+                    <div class="photoShoot__type"><img src="/img/latest/12.jpg"></div>
+                    <div class="photoShoot__type"><img src="/img/latest/13.jpg"></div>
+                    <div class="photoShoot__type"><img src="/img/latest/14.jpg"></div>
+          <div style="width:100%"></div>
+          <button anim="ripple"> <a href="/portfolio">Посмотреть ещё работы</a></button>
+        </div>
+      </section>
+      <div class="parallax-container" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="/img/home/4.jpg" data-natural-width="1500" data-natural-height="1000">
         <div class="caption"> <a href="/contact">Связаться со мной</a></div>
       </div>
     </main>

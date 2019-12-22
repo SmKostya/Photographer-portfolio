@@ -14,6 +14,7 @@ let uglifyJs = require("./webpack/js.uglify");
 
 let conf = merge([{
         entry: {
+            "base": "./src/pages/base.js",
             "index": "./src/pages/index/index.js",
             "contact": "./src/pages/contact/contact.js",
             "portfolio": "./src/pages/portfolio/portfolio.js",
