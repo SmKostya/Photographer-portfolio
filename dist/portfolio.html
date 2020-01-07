@@ -4,11 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Anton Tatochenko</title><script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous">
-</script>
+    <title>Anton Tatochenko</title>
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/png"><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="base.js"></script>
     <style>
-      header{position:relative!important;height:50px!important;background-color:#343333;width:100%!important}header .logo{padding:0 0 4px 50px !important}header .menu{align-items:center!important;padding:0 60px!important}header .menu ul{padding:0!important}.content{display:flex}.filter{position:fixed;left:0;top:0;width:20vh;min-width:160px;height:100%;border-right:1px solid #ccc}.filter ul{margin-top:80px;font-family:sans-serif;text-align:right;color:#333;font-size:16px;border-bottom:2px solid #ccc}.filter ul li:first-child{display:flex;align-self:center;justify-content:center;text-transform:uppercase;font-family:inherit;color:#333;font-size:14px;border-bottom:2px solid #ccc;padding:4px 0!important;width:calc(100%)}.filter ul li:last-child{border-bottom:2px solid #ccc;width:100%;display:flex;align-self:center;justify-content:flex-end;padding-bottom:10px!important}.filter ul li{padding:4px 8px;list-style:none;float:right;position:relative;display:flex;margin:4px 0}.filter ul li label{width:20px;height:20px;cursor:pointer;position:relative;top:0;left:0;background:#fcfff4;background:linear-gradient(top,#fcfff4 0%,#dfe5d7 40%,#b3bead 100%);border-radius:4px;box-shadow:inset 0 1px 1px white,0 1px 3px rgba(0,0,0,0.5)}.filter ul li label:after{content:'';width:9px;height:5px;position:absolute;top:4px;left:4px;border:3px solid #333;border-top:none;border-right:none;background:transparent;opacity:0;transform:rotate(-45deg)}.filter ul li label:hover::after{opacity:.5}.filter ul li input[type=checkbox]{visibility:hidden}.filter ul li input[type=checkbox]:checked + label:after{opacity:1}.content{margin-left:calc(220px + 2vw);margin-right:5vw}.allCategories{width:calc(93vw - 220px);padding-top:10px;display:flex;justify-content:space-between;flex-wrap:wrap;height:max-content;margin:0}.allCategories .categori{margin-bottom:30px}.allCategories .categori h2{color:#3f3d4d;padding-top:10px;text-align:center;font-family:sans-monospace;padding-bottom:20px}.allCategories .categori img{cursor:pointer;padding:1.2vw 1.2vw 0 0;width:calc((93vw - 220px - 3.6vw)/3.185185185);height:calc(((93vw - 220px - 3.6vw)/3.185185185) / 1.5)}.allCategories .categori img:nth-child(3n+1){padding-right:0!important}.allCategories .categori img:nth-child(100n+2),.allCategories .categori img:nth-child(100n+6),.allCategories .categori img:nth-child(100n+10){width:calc((93vw - 220px - 3.6vw)/3.185185185 * 1.185185185)!important;height:calc(((93vw - 220px - 3.6vw)/3.185185185) / 1.5)}.back{border:1px #fff solid;display:flex;flex-direction:row;justify-content:space-between;height:36px;background-color:#4e5566;text-align:center}.back > div{cursor:pointer;color:#fff;margin:auto;padding:8px 16px;border:1px solid #fff;height:100%;width:33.33333%;display:flex}.back > div span{margin:auto}.back > div:hover{background-color:#323f61}
+      header{position:absolute;left:0;top:0;width:100%;height:60px;z-index:2;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.footer{position:relative;width:100%;height:180px;background:#232c2f;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;text-align:center}.fixedBottom{position:fixed;bottom:0;left:0;width:100%;height:120px}
       
+    </style>
+    <style>
+      .gallery{height:calc(100vh - 120px - 50px)}.gallery .swiper-container{width:80%;height:calc(100vh - 120px - 50px)}.list{-webkit-transition:1s;-o-transition:1s;transition:1s;height:auto;right:0;position:fixed;padding:8px;width:183px;border-bottom-left-radius:20px;border-top-left-radius:20px;min-width:160px;top:calc(100vh - 75% - 50px);border-left:1px solid #ccc;background-color:#293441;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end}.list ul{font-weight:400;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;font-family:sans-serif;text-align:right;color:#fff;font-size:16px}.list ul li{cursor:pointer;text-align:right;padding:4px 8px;list-style:none;position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;margin:4px 0}.list ul li:first-child{font-weight:700;text-align:center;position:relative;display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-item-align:center!important;align-self:center!important;text-transform:uppercase;font-size:14px;border-bottom:2px solid #ccc;padding:4px 12px!important}.list ul li:last-child{cursor:pointer;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;display:-webkit-box;display:-ms-flexbox;display:flex;border-bottom-left-radius:20px;position:relative;bottom:-12px;right:-8px;padding:8px;padding-left:4px;padding-right:10px;width:100%;background-color:#1d252e}header{position:fixed!important;top:0;height:50px!important;background-color:#132536;width:100%!important;color:#fff}header .logo{padding:0 0 4px 50px !important}header .menu{-webkit-box-align:center!important;-ms-flex-align:center!important;align-items:center!important;padding:0 60px!important}header .menu ul{padding:0!important}header .hc-nav-trigger{top:13px!important;right:2%!important}header .hc-nav-trigger span,header .hc-nav-trigger span:before,header .hc-nav-trigger span:after{background:#fff!important}
       
       
     </style>
@@ -16,112 +20,115 @@
   <body>
     <header id="startWindow">
       <div class="logo">
-        <label><a class="active" href="https://portfolio-photographer.000webhostapp.com/">Anton Tatochenko</a></label>
+        <label><a href="https://anton-ph.com/">Anton Tatochenko</a></label>
       </div>
-      <div class="menu">
-        <ul> 
-          <li> <a class="active" href="https://portfolio-photographer.000webhostapp.com/"> Home</a></li>
+      <div class="menu" id="main-nav">
+        <ul>
+          <li> <a href="https://anton-ph.com/"> Home</a></li>
           <li><a href="portfolio">Portfolio</a></li>
-          <li> <a href="contact">Contact                 </a></li>
+          <li> <a href="contact">Contact  </a></li>
         </ul>
       </div>
     </header>
     <main>
-      <div class="her"></div>
       <div class="content">   
-        <div class="filter">
-          <ul> 
-            <li>Виды фотосессий</li>
-            <li>Выбрать все 
-              <input type="checkbox" id="all_types" checked="checked">
-              <label for="all_types"></label>
-              <li>Свадебные
-                <input type="checkbox" id="wedding" checked="checked">
-                <label for="wedding"></label>
+        <div class="filter hide">
+          <div class="filter__show"><span class="arrow"></span></div>
+          <div class="list">
+            <ul> 
+              <li>Виды фотосессий</li>
+              <li>Выбрать все 
+                <input type="checkbox" id="all_types" checked="checked" disabled>
+                <label for="all_types"></label>
+                <li>Свадебные
+                  <input type="checkbox" id="wedding" checked="checked" disabled>
+                  <label for="wedding"></label>
+                </li>
+                <li>Портретные
+                  <input type="checkbox" id="portrait" checked="checked" disabled>
+                  <label for="portrait"></label>
+                </li>
+                <li>Студийные
+                  <input type="checkbox" id="studio" checked="checked" disabled>
+                  <label for="studio"></label>
+                </li>
+                <li>История любви
+                  <input type="checkbox" id="loveStorie" checked="checked" disabled>
+                  <label for="loveStorie"></label>
+                </li>
+                <li>Прогулочные
+                  <input type="checkbox" id="walking" checked="checked" disabled>
+                  <label for="walking"></label>
+                </li>
+                <li>Будуарные
+                  <input type="checkbox" id="boudoir" checked="checked" disabled>
+                  <label for="boudoir"></label>
+                </li>
+                <li>Черно-Белые
+                  <input type="checkbox" id="black_and_white" checked="checked" disabled>
+                  <label for="black_and_white"></label>
+                </li>
+                <li>Творческие
+                  <input type="checkbox" id="creative" checked="checked" disabled>
+                  <label for="creative"></label>
+                </li>
+                <li>Репортажные
+                  <input type="checkbox" id="reporting" checked="checked" disabled>
+                  <label for="reporting"></label>
+                </li>
+                <li>Пейзажные
+                  <input type="checkbox" id="landscape" checked="checked" disabled>
+                  <label for="landscape"></label>
+                </li>
+                <li>Вечеринки
+                  <input type="checkbox" id="parties" checked="checked" disabled>
+                  <label for="parties"></label>
+                </li>
+                <li>Эксперементы
+                  <input type="checkbox" id="experiments" checked="checked" disabled>
+                  <label for="experiments"></label>
+                </li>
               </li>
-              <li>Портретные
-                <input type="checkbox" id="portrait" checked="checked">
-                <label for="portrait"></label>
-              </li>
-              <li>Студийные
-                <input type="checkbox" id="studio" checked="checked">
-                <label for="studio"></label>
-              </li>
-              <li>История любви
-                <input type="checkbox" id="loveStorie" checked="checked">
-                <label for="loveStorie"></label>
-              </li>
-              <li>Прогулочные
-                <input type="checkbox" id="walking" checked="checked">
-                <label for="walking"></label>
-              </li>
-              <li>Будуарные
-                <input type="checkbox" id="boudoir" checked="checked">
-                <label for="boudoir"></label>
-              </li>
-              <li>Черно-Белые
-                <input type="checkbox" id="black_and_white" checked="checked">
-                <label for="black_and_white"></label>
-              </li>
-              <li>Творческие
-                <input type="checkbox" id="creative" checked="checked">
-                <label for="creative"></label>
-              </li>
-              <li>Репортажные
-                <input type="checkbox" id="reporting" checked="checked">
-                <label for="reporting"></label>
-              </li>
-              <li>Пейзажные
-                <input type="checkbox" id="landscape" checked="checked">
-                <label for="landscape"></label>
-              </li>
-              <li>Вечеринки
-                <input type="checkbox" id="parties" checked="checked">
-                <label for="parties"></label>
-              </li>
-              <li>Эксперементы
-                <input type="checkbox" id="experiments" checked="checked">
-                <label for="experiments"></label>
-              </li>
-            </li>
-          </ul>
+              <li> <span class="filter__back">Свернуть</span></li>
+            </ul>
+          </div>
         </div>
         <div class="allCategories">
-                    <div class="categori portrait">
-                      <h2>Портретные</h2><img src="/img/types/portrait/1.jpg" alt="portrait"><img src="/img/types/portrait/2.jpg" alt="portrait"><img src="/img/types/portrait/3.jpg" alt="portrait"><img src="/img/types/portrait/4.jpg" alt="portrait"><img src="/img/types/portrait/5.jpg" alt="portrait"><img src="/img/types/portrait/6.jpg" alt="portrait"><img src="/img/types/portrait/7.jpg" alt="portrait"><img src="/img/types/portrait/8.jpg" alt="portrait"><img src="/img/types/portrait/9.jpg" alt="portrait">
+                    <div class="categori wedding">
+                      <h2>Свадебные</h2><img src="/img/types/wedding/1.jpg" alt="wedding"><img src="/img/types/wedding/2.jpg" alt="wedding"><img src="/img/types/wedding/3.jpg" alt="wedding"><img src="/img/types/wedding/4.jpg" alt="wedding"><img src="/img/types/wedding/5.jpg" alt="wedding"><img src="/img/types/wedding/6.jpg" alt="wedding">
                     </div>
                     <div class="categori portrait">
-                      <h2>Портретные</h2><img class="lazy" data-src="/img/types/portrait/1.jpg" alt="portrait"><img class="lazy" data-src="/img/types/portrait/2.jpg" alt="portrait"><img class="lazy" data-src="/img/types/portrait/3.jpg" alt="portrait"><img class="lazy" data-src="/img/types/portrait/4.jpg" alt="portrait"><img class="lazy" data-src="/img/types/portrait/5.jpg" alt="portrait"><img class="lazy" data-src="/img/types/portrait/6.jpg" alt="portrait"><img class="lazy" data-src="/img/types/portrait/7.jpg" alt="portrait"><img class="lazy" data-src="/img/types/portrait/8.jpg" alt="portrait"><img class="lazy" data-src="/img/types/portrait/9.jpg" alt="portrait">
+                      <h2>Портретные</h2><img class="lazy" data-src="/img/types/portrait/1.jpg" alt="portrait"><img class="lazy" data-src="/img/types/portrait/2.jpg" alt="portrait"><img class="lazy" data-src="/img/types/portrait/3.jpg" alt="portrait"><img class="lazy" data-src="/img/types/portrait/4.jpg" alt="portrait"><img class="lazy" data-src="/img/types/portrait/5.jpg" alt="portrait"><img class="lazy" data-src="/img/types/portrait/6.jpg" alt="portrait">
                     </div>
                     <div class="categori studio">
-                      <h2>Студийные</h2><img class="lazy" data-src="/img/types/studio/1.jpg" alt="studio"><img class="lazy" data-src="/img/types/studio/2.jpg" alt="studio"><img class="lazy" data-src="/img/types/studio/3.jpg" alt="studio"><img class="lazy" data-src="/img/types/studio/4.jpg" alt="studio"><img class="lazy" data-src="/img/types/studio/5.jpg" alt="studio"><img class="lazy" data-src="/img/types/studio/6.jpg" alt="studio"><img class="lazy" data-src="/img/types/studio/7.jpg" alt="studio"><img class="lazy" data-src="/img/types/studio/8.jpg" alt="studio"><img class="lazy" data-src="/img/types/studio/9.jpg" alt="studio">
+                      <h2>Студийные</h2><img class="lazy" data-src="/img/types/studio/1.jpg" alt="studio"><img class="lazy" data-src="/img/types/studio/2.jpg" alt="studio"><img class="lazy" data-src="/img/types/studio/3.jpg" alt="studio"><img class="lazy" data-src="/img/types/studio/4.jpg" alt="studio"><img class="lazy" data-src="/img/types/studio/5.jpg" alt="studio"><img class="lazy" data-src="/img/types/studio/6.jpg" alt="studio">
                     </div>
                     <div class="categori loveStorie">
-                      <h2>История любви</h2><img class="lazy" data-src="/img/types/loveStorie/1.jpg" alt="loveStorie"><img class="lazy" data-src="/img/types/loveStorie/2.jpg" alt="loveStorie"><img class="lazy" data-src="/img/types/loveStorie/3.jpg" alt="loveStorie"><img class="lazy" data-src="/img/types/loveStorie/4.jpg" alt="loveStorie"><img class="lazy" data-src="/img/types/loveStorie/5.jpg" alt="loveStorie"><img class="lazy" data-src="/img/types/loveStorie/6.jpg" alt="loveStorie"><img class="lazy" data-src="/img/types/loveStorie/7.jpg" alt="loveStorie"><img class="lazy" data-src="/img/types/loveStorie/8.jpg" alt="loveStorie"><img class="lazy" data-src="/img/types/loveStorie/9.jpg" alt="loveStorie">
+                      <h2>История любви</h2><img class="lazy" data-src="/img/types/loveStorie/1.jpg" alt="loveStorie"><img class="lazy" data-src="/img/types/loveStorie/2.jpg" alt="loveStorie"><img class="lazy" data-src="/img/types/loveStorie/3.jpg" alt="loveStorie"><img class="lazy" data-src="/img/types/loveStorie/4.jpg" alt="loveStorie"><img class="lazy" data-src="/img/types/loveStorie/5.jpg" alt="loveStorie"><img class="lazy" data-src="/img/types/loveStorie/6.jpg" alt="loveStorie">
                     </div>
                     <div class="categori walking">
-                      <h2>Прогулочные</h2><img class="lazy" data-src="/img/types/walking/1.jpg" alt="walking"><img class="lazy" data-src="/img/types/walking/2.jpg" alt="walking"><img class="lazy" data-src="/img/types/walking/3.jpg" alt="walking"><img class="lazy" data-src="/img/types/walking/4.jpg" alt="walking"><img class="lazy" data-src="/img/types/walking/5.jpg" alt="walking"><img class="lazy" data-src="/img/types/walking/6.jpg" alt="walking"><img class="lazy" data-src="/img/types/walking/7.jpg" alt="walking"><img class="lazy" data-src="/img/types/walking/8.jpg" alt="walking"><img class="lazy" data-src="/img/types/walking/9.jpg" alt="walking">
+                      <h2>Прогулочные</h2><img class="lazy" data-src="/img/types/walking/1.jpg" alt="walking"><img class="lazy" data-src="/img/types/walking/2.jpg" alt="walking"><img class="lazy" data-src="/img/types/walking/3.jpg" alt="walking"><img class="lazy" data-src="/img/types/walking/4.jpg" alt="walking"><img class="lazy" data-src="/img/types/walking/5.jpg" alt="walking"><img class="lazy" data-src="/img/types/walking/6.jpg" alt="walking">
                     </div>
                     <div class="categori boudoir">
-                      <h2>Будуарные</h2><img class="lazy" data-src="/img/types/boudoir/1.jpg" alt="boudoir"><img class="lazy" data-src="/img/types/boudoir/2.jpg" alt="boudoir"><img class="lazy" data-src="/img/types/boudoir/3.jpg" alt="boudoir"><img class="lazy" data-src="/img/types/boudoir/4.jpg" alt="boudoir"><img class="lazy" data-src="/img/types/boudoir/5.jpg" alt="boudoir"><img class="lazy" data-src="/img/types/boudoir/6.jpg" alt="boudoir"><img class="lazy" data-src="/img/types/boudoir/7.jpg" alt="boudoir"><img class="lazy" data-src="/img/types/boudoir/8.jpg" alt="boudoir"><img class="lazy" data-src="/img/types/boudoir/9.jpg" alt="boudoir">
+                      <h2>Будуарные</h2><img class="lazy" data-src="/img/types/boudoir/1.jpg" alt="boudoir"><img class="lazy" data-src="/img/types/boudoir/2.jpg" alt="boudoir"><img class="lazy" data-src="/img/types/boudoir/3.jpg" alt="boudoir"><img class="lazy" data-src="/img/types/boudoir/4.jpg" alt="boudoir"><img class="lazy" data-src="/img/types/boudoir/5.jpg" alt="boudoir"><img class="lazy" data-src="/img/types/boudoir/6.jpg" alt="boudoir">
                     </div>
                     <div class="categori black_and_white">
-                      <h2>Черно-Белые</h2><img class="lazy" data-src="/img/types/black_and_white/1.jpg" alt="black_and_white"><img class="lazy" data-src="/img/types/black_and_white/2.jpg" alt="black_and_white"><img class="lazy" data-src="/img/types/black_and_white/3.jpg" alt="black_and_white"><img class="lazy" data-src="/img/types/black_and_white/4.jpg" alt="black_and_white"><img class="lazy" data-src="/img/types/black_and_white/5.jpg" alt="black_and_white"><img class="lazy" data-src="/img/types/black_and_white/6.jpg" alt="black_and_white"><img class="lazy" data-src="/img/types/black_and_white/7.jpg" alt="black_and_white"><img class="lazy" data-src="/img/types/black_and_white/8.jpg" alt="black_and_white"><img class="lazy" data-src="/img/types/black_and_white/9.jpg" alt="black_and_white">
+                      <h2>Черно-Белые</h2><img class="lazy" data-src="/img/types/black_and_white/1.jpg" alt="black_and_white"><img class="lazy" data-src="/img/types/black_and_white/2.jpg" alt="black_and_white"><img class="lazy" data-src="/img/types/black_and_white/3.jpg" alt="black_and_white"><img class="lazy" data-src="/img/types/black_and_white/4.jpg" alt="black_and_white"><img class="lazy" data-src="/img/types/black_and_white/5.jpg" alt="black_and_white"><img class="lazy" data-src="/img/types/black_and_white/6.jpg" alt="black_and_white">
                     </div>
                     <div class="categori creative">
-                      <h2>Творческие</h2><img class="lazy" data-src="/img/types/creative/1.jpg" alt="creative"><img class="lazy" data-src="/img/types/creative/2.jpg" alt="creative"><img class="lazy" data-src="/img/types/creative/3.jpg" alt="creative"><img class="lazy" data-src="/img/types/creative/4.jpg" alt="creative"><img class="lazy" data-src="/img/types/creative/5.jpg" alt="creative"><img class="lazy" data-src="/img/types/creative/6.jpg" alt="creative"><img class="lazy" data-src="/img/types/creative/7.jpg" alt="creative"><img class="lazy" data-src="/img/types/creative/8.jpg" alt="creative"><img class="lazy" data-src="/img/types/creative/9.jpg" alt="creative">
+                      <h2>Творческие</h2><img class="lazy" data-src="/img/types/creative/1.jpg" alt="creative"><img class="lazy" data-src="/img/types/creative/2.jpg" alt="creative"><img class="lazy" data-src="/img/types/creative/3.jpg" alt="creative"><img class="lazy" data-src="/img/types/creative/4.jpg" alt="creative"><img class="lazy" data-src="/img/types/creative/5.jpg" alt="creative"><img class="lazy" data-src="/img/types/creative/6.jpg" alt="creative">
                     </div>
                     <div class="categori reporting">
-                      <h2>Репортажные</h2><img class="lazy" data-src="/img/types/reporting/1.jpg" alt="reporting"><img class="lazy" data-src="/img/types/reporting/2.jpg" alt="reporting"><img class="lazy" data-src="/img/types/reporting/3.jpg" alt="reporting"><img class="lazy" data-src="/img/types/reporting/4.jpg" alt="reporting"><img class="lazy" data-src="/img/types/reporting/5.jpg" alt="reporting"><img class="lazy" data-src="/img/types/reporting/6.jpg" alt="reporting"><img class="lazy" data-src="/img/types/reporting/7.jpg" alt="reporting"><img class="lazy" data-src="/img/types/reporting/8.jpg" alt="reporting"><img class="lazy" data-src="/img/types/reporting/9.jpg" alt="reporting">
+                      <h2>Репортажные</h2><img class="lazy" data-src="/img/types/reporting/1.jpg" alt="reporting"><img class="lazy" data-src="/img/types/reporting/2.jpg" alt="reporting"><img class="lazy" data-src="/img/types/reporting/3.jpg" alt="reporting"><img class="lazy" data-src="/img/types/reporting/4.jpg" alt="reporting"><img class="lazy" data-src="/img/types/reporting/5.jpg" alt="reporting"><img class="lazy" data-src="/img/types/reporting/6.jpg" alt="reporting">
                     </div>
                     <div class="categori landscape">
-                      <h2>Пейзажные</h2><img class="lazy" data-src="/img/types/landscape/1.jpg" alt="landscape"><img class="lazy" data-src="/img/types/landscape/2.jpg" alt="landscape"><img class="lazy" data-src="/img/types/landscape/3.jpg" alt="landscape"><img class="lazy" data-src="/img/types/landscape/4.jpg" alt="landscape"><img class="lazy" data-src="/img/types/landscape/5.jpg" alt="landscape"><img class="lazy" data-src="/img/types/landscape/6.jpg" alt="landscape"><img class="lazy" data-src="/img/types/landscape/7.jpg" alt="landscape"><img class="lazy" data-src="/img/types/landscape/8.jpg" alt="landscape"><img class="lazy" data-src="/img/types/landscape/9.jpg" alt="landscape">
+                      <h2>Пейзажные</h2><img class="lazy" data-src="/img/types/landscape/1.jpg" alt="landscape"><img class="lazy" data-src="/img/types/landscape/2.jpg" alt="landscape"><img class="lazy" data-src="/img/types/landscape/3.jpg" alt="landscape"><img class="lazy" data-src="/img/types/landscape/4.jpg" alt="landscape"><img class="lazy" data-src="/img/types/landscape/5.jpg" alt="landscape"><img class="lazy" data-src="/img/types/landscape/6.jpg" alt="landscape">
                     </div>
                     <div class="categori parties">
-                      <h2>Вечеринки</h2><img class="lazy" data-src="/img/types/parties/1.jpg" alt="parties"><img class="lazy" data-src="/img/types/parties/2.jpg" alt="parties"><img class="lazy" data-src="/img/types/parties/3.jpg" alt="parties"><img class="lazy" data-src="/img/types/parties/4.jpg" alt="parties"><img class="lazy" data-src="/img/types/parties/5.jpg" alt="parties"><img class="lazy" data-src="/img/types/parties/6.jpg" alt="parties"><img class="lazy" data-src="/img/types/parties/7.jpg" alt="parties"><img class="lazy" data-src="/img/types/parties/8.jpg" alt="parties"><img class="lazy" data-src="/img/types/parties/9.jpg" alt="parties">
+                      <h2>Вечеринки</h2><img class="lazy" data-src="/img/types/parties/1.jpg" alt="parties"><img class="lazy" data-src="/img/types/parties/2.jpg" alt="parties"><img class="lazy" data-src="/img/types/parties/3.jpg" alt="parties"><img class="lazy" data-src="/img/types/parties/4.jpg" alt="parties"><img class="lazy" data-src="/img/types/parties/5.jpg" alt="parties"><img class="lazy" data-src="/img/types/parties/6.jpg" alt="parties">
                     </div>
                     <div class="categori experiments">
-                      <h2>Эксперементы</h2><img class="lazy" data-src="/img/types/experiments/1.jpg" alt="experiments"><img class="lazy" data-src="/img/types/experiments/2.jpg" alt="experiments"><img class="lazy" data-src="/img/types/experiments/3.jpg" alt="experiments"><img class="lazy" data-src="/img/types/experiments/4.jpg" alt="experiments"><img class="lazy" data-src="/img/types/experiments/5.jpg" alt="experiments"><img class="lazy" data-src="/img/types/experiments/6.jpg" alt="experiments"><img class="lazy" data-src="/img/types/experiments/7.jpg" alt="experiments"><img class="lazy" data-src="/img/types/experiments/8.jpg" alt="experiments"><img class="lazy" data-src="/img/types/experiments/9.jpg" alt="experiments">
+                      <h2>Эксперементы</h2><img class="lazy" data-src="/img/types/experiments/1.jpg" alt="experiments"><img class="lazy" data-src="/img/types/experiments/2.jpg" alt="experiments"><img class="lazy" data-src="/img/types/experiments/3.jpg" alt="experiments"><img class="lazy" data-src="/img/types/experiments/4.jpg" alt="experiments"><img class="lazy" data-src="/img/types/experiments/5.jpg" alt="experiments"><img class="lazy" data-src="/img/types/experiments/6.jpg" alt="experiments">
                     </div>
         </div>
       </div>
@@ -137,61 +144,16 @@
               <label class="icon telegram"></label></a><a href="https://instagram.com/anton_photographer_?igshid=540gzsq9m1j2">
               <label class="icon instagram"></label></a></div>
         </div>
-        <div class="links"><a href="https://portfolio-photographer.000webhostapp.com/"><label> Home </label></a>
+        <div class="links"><a href="https://anton-ph.com/"><label> Home </label></a>
           <label onclick="scrollToObject(startWindow)">Top</label>
         </div>
       </div>
     </footer>
-    <script type="text/javascript">
-      let heightPage = Math.max(
-          document.body.scrollHeight, document.documentElement.scrollHeight,
-          document.body.offsetHeight, document.documentElement.offsetHeight,
-          document.body.clientHeight, document.documentElement.clientHeight
-      );
+    <script>
       function scrollToObject(object){
           let scrollValue = object.offsetTop - window.pageYOffset;
           window.scrollBy({top: scrollValue, behavior: 'smooth'});
       }
-      document.addEventListener('DOMContentLoaded', function(){
-          let windowHeight = document.documentElement.clientHeight;
-          let bodyHeight = document.body.scrollHeight;
-          if (bodyHeight + 180 < windowHeight){
-              document.getElementsByTagName("footer")[0].classList.add("fixedBottom");
-          }else if(document.getElementsByTagName("footer")[0].classList.contains("fixedBottom"))
-          {
-              document.getElementsByTagName("footer")[0].classList.remove("fixedBottom");
-          }
-      });          
-      
-      document.addEventListener("DOMContentLoaded", function() {
-      var lazyloadImages = document.querySelectorAll("img.lazy");    
-      var lazyloadThrottleTimeout;
-      
-      function lazyload () {
-          if(lazyloadThrottleTimeout) {
-          clearTimeout(lazyloadThrottleTimeout);
-          }    
-          
-          lazyloadThrottleTimeout = setTimeout(function() {
-              var scrollTop = window.pageYOffset;
-              lazyloadImages.forEach(function(img) {
-                  if(img.offsetTop < (window.innerHeight + scrollTop)) {
-                  img.src = img.dataset.src;
-                  img.classList.remove('lazy');
-                  }
-              });
-              if(lazyloadImages.length == 0) { 
-              document.removeEventListener("scroll", lazyload);
-              window.removeEventListener("resize", lazyload);
-              window.removeEventListener("orientationChange", lazyload);
-              }
-          }, 20);
-      }
-      
-      document.addEventListener("scroll", lazyload);
-      window.addEventListener("resize", lazyload);
-      window.addEventListener("orientationChange", lazyload);
-      });
     </script>
   <script type="text/javascript" src="portfolio.js"></script></body>
 </html>

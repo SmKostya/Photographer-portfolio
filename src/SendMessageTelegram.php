@@ -16,7 +16,7 @@ $arr = array(
     "Тип фотосесси: " => $type,
     "Время: " => $time,
     "Стоимость часа фотосессии: " => $money_per_hour,
-    "Итоговая сумма: " => $fullMoney,
+    "Итоговая сумма: " => $time * $money_per_hour,
     "Телефон: " => $phone,
     "Сообщение: " => $text,
 );
@@ -28,8 +28,8 @@ foreach($arr as $key => $value) {
 $sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}", "r");
 
 if ($sendToTelegram) {
-    echo "<h1 class='success'>Спасибо за отправку вашего сообщения!</h1>";
+    header("Location: http://anton-ph.com/");
     return true;
 } else {
-    header("Location: thank-you.html");
+    header("Location: http://anton-ph.com/contact");
 }

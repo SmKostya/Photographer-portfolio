@@ -2,6 +2,9 @@ import "hc-offcanvas-nav/src/scss/hc-offcanvas-nav.scss";
 import "hc-offcanvas-nav/src/js/hc-offcanvas-nav.js";
 import "hc-offcanvas-nav";
 
+
+
+
 document.addEventListener('DOMContentLoaded', function () {
     footerResponsivePosition();
 
@@ -14,11 +17,24 @@ jQuery(document).ready(function ($) {
     loadResponseMenu();
     setActivePageInMenu();
     setUrlInHomeLinks();
-
+    ChekUrlBeforeSendedFormPage();
 
 });
 
-function loadResponseMenu(){
+function ChekUrlBeforeSendedFormPage(){
+    if (location.href.slice(0,28) == "http://anton-ph.com/contact?"){
+        if (sessionStorage["lastUrl"] == "http://anton-ph.com/contact"){
+        } else{
+        location.href = "http://anton-ph.com/contact";
+        }
+    } else if (location.href == "http://anton-ph.com/contact") {
+        sessionStorage["lastUrl"] = "http://anton-ph.com/contact";
+    } else{
+        sessionStorage["lastUrl"] = location.href;
+    }
+}
+
+function loadResponseMenu() {
     $('#main-nav').hcOffcanvasNav({
         maxWidth: 815,
         position: 'left',
@@ -32,28 +48,38 @@ function loadResponseMenu(){
         customToggle: null
     });
 }
-function setActivePageInMenu(){
-    let url = location.href.split(/\/+/)[1];
-    let pageWithTabs = location.href.split(url +"/")[1];
-    let page = pageWithTabs.split("#")[0];
-    for (let i = 0; i < $("#main-nav a").length; i++){
-      if($("#main-nav a").eq(i).attr("href") == page){
-        $("#main-nav a").eq(i).addClass("active");
-      }
+
+function setActivePageInMenu() {
+    let url = location.href;
+    if (url == "http://anton-ph.com/") {
+        $("#main-nav a").eq(0).addClass("active");
+    } else {
+        let pageWithTabs = location.href.split("http://anton-ph.com/")[1];
+        if (pageWithTabs.includes("#")){
+            var page = pageWithTabs.split("#")[0];
+        } else{
+            page = pageWithTabs;
+        }
+        
+        for (let i = 0; i < $("#main-nav a").length; i++) {
+            if ($("#main-nav a").eq(i).attr("href") == page) {
+                $("#main-nav a").eq(i).addClass("active");
+            }
+        }
     }
 }
 
-function setUrlInHomeLinks(){
+function setUrlInHomeLinks() {
     let css_root = document.querySelector(':root');
-    let url = "http://"+location.href.split(/\/+/)[1] + "/";
+    let url = "http://" + location.href.split(/\/+/)[1] + "/";
     css_root.style.setProperty("--sute_url", url);
-    $(".footer a").prop("href", url);
+    $(".footer .links a").prop("href", url);
     $(".logo label a").prop("href", url);
     $("#main-nav a").eq(0).prop("href", url);
 }
 
 
-function footerResponsivePosition(){
+function footerResponsivePosition() {
     let windowHeight = document.documentElement.clientHeight;
     let bodyHeight = document.body.scrollHeight;
     if (bodyHeight + 180 < windowHeight) {
@@ -62,10 +88,10 @@ function footerResponsivePosition(){
         document.getElementsByTagName("footer")[0].classList.remove("fixedBottom");
     }
 }
+let lazyloadImages = document.querySelectorAll("img.lazy");
 
 function lazyload() {
-    let lazyloadImages = document.querySelectorAll("img.lazy");
-    let lazyloadThrottleTimeout;
+    let lazyloadThrottleTimeout = 0;
     if (lazyloadThrottleTimeout) {
         clearTimeout(lazyloadThrottleTimeout);
     }
@@ -85,4 +111,3 @@ function lazyload() {
         }
     }, 20);
 }
-

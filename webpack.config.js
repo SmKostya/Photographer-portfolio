@@ -18,7 +18,6 @@ let conf = merge([{
             "index": "./src/pages/index/index.js",
             "contact": "./src/pages/contact/contact.js",
             "portfolio": "./src/pages/portfolio/portfolio.js",
-            "portfolio_categori": "./src/pages/ajax/portfolio_categori.js",
         },
         output: {
             path: path.resolve(__dirname, "./dist"),

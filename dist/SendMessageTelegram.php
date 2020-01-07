@@ -1,36 +1,36 @@
 <?php
 
-define('TELEGRAM_TOKEN', '922848846:1027824174:AAH3zfI3g2StZoB-QbG-3CTzPhWMNhNJHA8');
+$name = $_POST['name'];
+$type = $_POST['type'];
+$time = $_POST['time'];
+$money_per_hour = $_POST['money_per_hour'];
+$fullMoney = $_POST['fullMoney'];
+$phone = $_POST['phone'];
+$text = $_POST['text'];
+$token = '1027824174:AAH3zfI3g2StZoB-QbG-3CTzPhWMNhNJHA8';
+$chat_id = '-349648037';
 
-define('TELEGRAM_CHATID', '922848846');
 
+$arr = array(
+    "Имя пользователя: " => $name,
+    "Тип фотосесси: " => $type,
+    "Время: " => $time,
+    "Стоимость часа фотосессии: " => $money_per_hour,
+    "Итоговая сумма: " => $time * $money_per_hour,
+    "Телефон: " => $phone,
+    "Сообщение: " => $text,
+);
 
+foreach($arr as $key => $value) {
+    $txt .= "<b>".$key."</b> ".$value."%0A";
+};
 
+$sendToTelegram = fopen("https://api.telegram.org/bot{$token}/sendMessage?chat_id={$chat_id}&parse_mode=html&text={$txt}", "r");
 
-message_to_telegram('Привет!');
-
-function message_to_telegram($text)
-{
-    $ch = curl_init();
-    curl_setopt_array(
-        $ch,
-        array(
-            CURLOPT_URL => 'https://api.telegram.org/bot' . TELEGRAM_TOKEN . '/sendMessage',
-            CURLOPT_POST => TRUE,
-            CURLOPT_RETURNTRANSFER => TRUE,
-            CURLOPT_TIMEOUT => 10,
-            CURLOPT_POSTFIELDS => array(
-                'chat_id' => TELEGRAM_CHATID,
-                $firstname = $_POST['firstname'],
-                $surname = $_POST['surname'],
-                $type = $_POST['type'],
-                $time = $_POST['time'],
-                $money_per_hour = $_POST['money_per_hour'],
-                $fullMoney = $_POST['fullMoney'],
-                $phone = $_POST['phone'],
-                'text' => $text,
-            ),
-        )
-    );
-    curl_exec($ch);
+if ($sendToTelegram) {
+    header("Location:http://anton-ph.com/contact?m=success");
+    return true;
+} else {
+    header("Location: http://anton-ph.com/contact?m=error");
+    return false;
 }

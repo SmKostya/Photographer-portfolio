@@ -4,25 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Anton Tatochenko</title><script src="https://code.jquery.com/jquery-3.1.0.js" integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk=" crossorigin="anonymous">
-</script>
+    <title>Anton Tatochenko</title>
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/png"><script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="base.js"></script>
+    <style>
+      header{position:absolute;left:0;top:0;width:100%;height:60px;z-index:2;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.footer{position:relative;width:100%;height:180px;background:#232c2f;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;text-align:center}.fixedBottom{position:fixed;bottom:0;left:0;width:100%;height:120px}
+      
+    </style>
+    <style>.startWindow{position:relative;width:100%;min-height:100vh!important;max-height:calc(0.8 * 100vw/1.7);background:-o-linear-gradient(#000000d5 0,#00000010 90px,#ffffff00 120px),url(/img/home/5.jpg) left top!important;background:linear-gradient(#000000d5 0,#00000010 90px,#ffffff00 120px),url(/img/home/5.jpg) left top!important;background-size:cover!important}.goBottom{position:absolute;bottom:0;left:0;width:100%;height:40px;mix-blend-mode:normal;z-index:3;background:rgba(112,112,112,0.34);border-top:1px solid rgba(255,255,255,0.7);display:-webkit-box;display:-ms-flexbox;display:flex}.goBottom img{-webkit-filter:invert(0.2);filter:invert(0.2);cursor:pointer;margin:auto;margin-bottom:2px;width:50px;height:35px}</style>
   </head>
   <body>
     <header id="startWindow">
       <div class="logo">
-        <label><a class="active" href="https://portfolio-photographer.000webhostapp.com/">Anton Tatochenko</a></label>
+        <label><a href="https://anton-ph.com/">Anton Tatochenko</a></label>
       </div>
-      <div class="menu">
-        <ul> 
-          <li> <a class="active" href="https://portfolio-photographer.000webhostapp.com/"> Home</a></li>
+      <div class="menu" id="main-nav">
+        <ul>
+          <li> <a href="https://anton-ph.com/"> Home</a></li>
           <li><a href="portfolio">Portfolio</a></li>
-          <li> <a href="contact">Contact                 </a></li>
+          <li> <a href="contact">Contact  </a></li>
         </ul>
       </div>
     </header>
     <main>
       <div class="startWindow" data-type="background">
         <div class="welcome">Добро пожаловать на мой сайт-портфолио, меня зовут Антон Таточенко, я занимаюсь профессионально фотографией уже на протяжении 3 лет, с помощью этого сайта вы сможете ознакомиться с моими работами и связаться со мной.</div>
+        <div class="welcome_mobile"> 
+          <div class="category"> <span onclick="scrollToObject(lastest_photoShoots)">View category</span></div>
+          <div class="lastest"> <span onclick="scrollToObject(lastest_photoShoots)">View lastest photo</span></div>
+        </div>
         <div class="goBottom"> <img src="/img/down.png" alt="" srcset="" onclick="scrollToObject(photoShoot__types);"></div>
       </div>
       <section>
@@ -64,9 +74,10 @@
                     <div class="photoShoot__type" id="experiments"><img alt="experiments" src="/img/types/12.jpg">
                       <p><span>Эксперементы</span></p>
                     </div>
+          <button anim="ripple"> <a href="/portfolio">Посмотреть остальные стили</a></button>
         </div>
       </section>
-      <div class="parallax-container" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="/img/home/2.jpg" data-natural-width="1500" data-natural-height="1000">
+      <div class="parallax-container" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="/img/home/2.jpg" data-natural-width="4368" data-natural-height="2912">
         <div class="caption" onclick="scrollToObject(lastest_photoShoots);">Последние работы</div>
       </div>
       <section>
@@ -89,7 +100,7 @@
           <button anim="ripple"> <a href="/portfolio">Посмотреть ещё работы</a></button>
         </div>
       </section>
-      <div class="parallax-container" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="/img/home/4.jpg" data-natural-width="1500" data-natural-height="1000">
+      <div class="parallax-container" data-parallax="scroll" data-bleed="10" data-speed="0.2" data-image-src="/img/home/4.jpg" data-natural-width="4278" data-natural-height="2852">
         <div class="caption"> <a href="/contact">Связаться со мной</a></div>
       </div>
     </main>
@@ -104,61 +115,16 @@
               <label class="icon telegram"></label></a><a href="https://instagram.com/anton_photographer_?igshid=540gzsq9m1j2">
               <label class="icon instagram"></label></a></div>
         </div>
-        <div class="links"><a href="https://portfolio-photographer.000webhostapp.com/"><label> Home </label></a>
+        <div class="links"><a href="https://anton-ph.com/"><label> Home </label></a>
           <label onclick="scrollToObject(startWindow)">Top</label>
         </div>
       </div>
     </footer>
-    <script type="text/javascript">
-      let heightPage = Math.max(
-          document.body.scrollHeight, document.documentElement.scrollHeight,
-          document.body.offsetHeight, document.documentElement.offsetHeight,
-          document.body.clientHeight, document.documentElement.clientHeight
-      );
+    <script>
       function scrollToObject(object){
           let scrollValue = object.offsetTop - window.pageYOffset;
           window.scrollBy({top: scrollValue, behavior: 'smooth'});
       }
-      document.addEventListener('DOMContentLoaded', function(){
-          let windowHeight = document.documentElement.clientHeight;
-          let bodyHeight = document.body.scrollHeight;
-          if (bodyHeight + 180 < windowHeight){
-              document.getElementsByTagName("footer")[0].classList.add("fixedBottom");
-          }else if(document.getElementsByTagName("footer")[0].classList.contains("fixedBottom"))
-          {
-              document.getElementsByTagName("footer")[0].classList.remove("fixedBottom");
-          }
-      });          
-      
-      document.addEventListener("DOMContentLoaded", function() {
-      var lazyloadImages = document.querySelectorAll("img.lazy");    
-      var lazyloadThrottleTimeout;
-      
-      function lazyload () {
-          if(lazyloadThrottleTimeout) {
-          clearTimeout(lazyloadThrottleTimeout);
-          }    
-          
-          lazyloadThrottleTimeout = setTimeout(function() {
-              var scrollTop = window.pageYOffset;
-              lazyloadImages.forEach(function(img) {
-                  if(img.offsetTop < (window.innerHeight + scrollTop)) {
-                  img.src = img.dataset.src;
-                  img.classList.remove('lazy');
-                  }
-              });
-              if(lazyloadImages.length == 0) { 
-              document.removeEventListener("scroll", lazyload);
-              window.removeEventListener("resize", lazyload);
-              window.removeEventListener("orientationChange", lazyload);
-              }
-          }, 20);
-      }
-      
-      document.addEventListener("scroll", lazyload);
-      window.addEventListener("resize", lazyload);
-      window.addEventListener("orientationChange", lazyload);
-      });
     </script>
   <script type="text/javascript" src="index.js"></script></body>
 </html>

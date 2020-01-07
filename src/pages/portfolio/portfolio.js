@@ -1,4 +1,3 @@
-import $ from "jquery";
 import "./portfolio.scss";
 import "../base.scss";
 import "normalize.css";
@@ -7,13 +6,21 @@ import 'swiper/css/swiper.css';
 
 
 
+window.ontouchmove = function(){
+    clearTimeout(lazyloadThrottleTimeout);
+    lazyload();
+};
+window.onscroll = function(){
+    clearTimeout(lazyloadThrottleTimeout);
+    lazyload();
+};
 
 $("img").on("click", function () {
     ajaxLoad(this.alt);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    $(".filter__show").click();
+    $(".filter__back").click();
     loadAjaxPage();
 
 
@@ -23,7 +30,7 @@ window.addEventListener("hashchange", function(){
     if (hash != "" && hash != undefined){
         ajaxLoad(hash);
     }else{
-        window.location.href = "portfolio";
+        window.location.href = "http://anton-ph.com/portfolio";
     }
     
 });
@@ -145,10 +152,10 @@ $("input").parent("li").on("click", function(){
 });
 
 
-
+let lazyloadImages = document.querySelectorAll("img.lazy");
+let lazyloadThrottleTimeout;
 function lazyload() {
-    let lazyloadImages = document.querySelectorAll("img.lazy");
-    let lazyloadThrottleTimeout;
+
     if (lazyloadThrottleTimeout) {
         clearTimeout(lazyloadThrottleTimeout);
     }
@@ -173,17 +180,12 @@ function lazyload() {
 
 function ajaxLoad(page){
     $("main").load(page + ".html");
-    $(document).ajaxComplete(loadSlider);
     location.hash = '#'+page;
     css_root.style.setProperty('--viewSlider', true);
-    document.getElementsByTagName("footer")[0].classList.add("fixedBottom");
-}
 
 
-
-
-function loadSlider() {
-  let mainSliderSelector = '.main-slider',
+    $(document).ajaxComplete(function(){
+        let mainSliderSelector = '.main-slider',
         navSliderSelector = '.nav-slider',
         interleaveOffset = 0.5;
         let mainSliderOptions = {
@@ -265,4 +267,6 @@ function loadSlider() {
         let navSlider = new Swiper(navSliderSelector, navSliderOptions);
         mainSlider.controller.control = navSlider;
         navSlider.controller.control = mainSlider;
+    });
+    document.getElementsByTagName("footer")[0].classList.add("fixedBottom");
 }

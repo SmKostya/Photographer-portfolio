@@ -3,9 +3,9 @@ block main
     .gallery
             .swiper-container.main-slider.loading
                 .swiper-wrapper
-                    - for (var i = 1; i < 10; i++)
+                    - for (var i = 1; i < 7; i++)
                         .swiper-slide
-                            figure.slide-bgimg(style="background-image:url(/img/types/loveStorie/"+i+".jpg)")
+                            figure.slide-bgimg(style="background:#000 url(/img/types/loveStorie/"+i+".jpg)" )
                                 img.entity-img(src="/img/types/loveStorie/"+i+".jpg")
                             .content
                                 p.title
@@ -14,7 +14,7 @@ block main
                 .swiper-button-next.swiper-button-white
             .swiper-container.nav-slider.loading
                 .swiper-wrapper(role="navigation")
-                    - for (var i = 1; i < 10; i++)
+                    - for (var i = 1; i < 7; i++)
                         .swiper-slide
                             figure.slide-bgimg(style="background-image:url(/img/types/loveStorie/"+i+".jpg)")
                                 img.entity-img(src="/img/types/loveStorie/"+i+".jpg")

@@ -2,10 +2,10 @@
     "remotefs.remote": {
         "первый сайт": {
             "scheme": "ftp",
-            "host": "files.000webhost.com",
+            "host": "anton-ph.com",
             "port": 21,
-            "username": "portfolio-photographer",
-            "password": "secretsecret",
+            "username": "antonphc",
+            "password": "987987QWEqew",
             "rootPath": "/",
             "connectTimeout": 10000
         }

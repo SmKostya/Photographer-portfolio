@@ -11,43 +11,20 @@ html(lang="en")
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         script(src="base.js")
         style.
-            header {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 60px;
-            z-index: 2;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;}        
-            .footer {
-            position: relative;
-            width: 100%;
-            height: 180px;
-            background: #232c2f;
-            display: flex;
-            flex-direction: column;
-            text-align: center;}
-            .fixedBottom {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 120px;}
-            
+            header{position:absolute;left:0;top:0;width:100%;height:60px;z-index:2;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}.footer{position:relative;width:100%;height:180px;background:#232c2f;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-ms-flex-direction:column;flex-direction:column;text-align:center}.fixedBottom{position:fixed;bottom:0;left:0;width:100%;height:120px}
+
         block head
             
     body
         header#startWindow
             .logo
                 label
-                    a(href="https://portfolio-photographer.000webhostapp.com/") Anton Tatochenko
+                    a(href="https://anton-ph.com/") Anton Tatochenko
             .menu#main-nav
 
                 ul
                     li 
-                        a(href="https://portfolio-photographer.000webhostapp.com/")  Home
+                        a(href="https://anton-ph.com/")  Home
                     li
                         a(href="portfolio") Portfolio
                     li 
@@ -72,7 +49,7 @@ html(lang="en")
                             label.icon.instagram
 
                 .links
-                    a(href="https://portfolio-photographer.000webhostapp.com/") <label> Home </label>
+                    a(href="https://anton-ph.com/") <label> Home </label>
                     label(onclick="scrollToObject(startWindow)") Top
           
         script.
@@ -80,3 +57,4 @@ html(lang="en")
                 let scrollValue = object.offsetTop - window.pageYOffset;
                 window.scrollBy({top: scrollValue, behavior: 'smooth'});
             }
+
