@@ -1,0 +1,28 @@
+body{
+    background-color: #383b3c;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    .messageBox{
+        text-align: center;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        margin-top: 20vh;
+
+        .error{
+            font-size: 260px;
+        }
+        .message{
+            font-family: cursive;
+            font-size: 16px;
+            .second{
+                color: #00ff00;
+            }
+            a{
+                color: #0072ff;
+            }
+        }
+    }
+}

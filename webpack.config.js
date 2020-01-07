@@ -18,6 +18,7 @@ let conf = merge([{
             "index": "./src/pages/index/index.js",
             "contact": "./src/pages/contact/contact.js",
             "portfolio": "./src/pages/portfolio/portfolio.js",
+            "404": "./src/pages/404/404.js",
         },
         output: {
             path: path.resolve(__dirname, "./dist"),
@@ -30,6 +31,11 @@ let conf = merge([{
             }, ]
         },
         plugins: [
+            new HtmlWebpackPlugin({
+                filename: "404.html",
+                chunks: ["404"],
+                template: "./src/pages/404/404.pug"
+            }),
             new HtmlWebpackPlugin({
                 filename: "index.html",
                 chunks: ["index"],
